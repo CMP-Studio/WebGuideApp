@@ -2,7 +2,27 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-# Create your models here.
+#Hours table
+class Hour
+    date_start      = models.DateField()
+    date_end        = models.DateField()
+    date_requested  = models.DateField()
+    sunday_open     = models.TimeField()
+    sunday_close    = models.TimeField()
+    monday_open     = models.TimeField()
+    monday_close    = models.TimeField()
+    tuesday_open    = models.TimeField()
+    tuesday_close   = models.TimeField()
+    wednesday_open  = models.TimeField()
+    wednesday_close = models.TimeField()
+    thursday_open   = models.TimeField()
+    thursday_close  = models.TimeField()
+    friday_open     = models.TimeField()
+    friday_close    = models.TimeField()
+    saturday_open   = models.TimeField()
+    saturday_close  = models.TimeField()
+
+# Sync tables.
 class Location(models.Model):
     uuid            = models.UUIDField(primary_key=True)
     created_at      = models.DateTimeField()
