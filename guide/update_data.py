@@ -3,18 +3,15 @@ import pprint
 
 sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
 
-def update():
-    # First we need to retrieve the data
-    data = get_sync_data()
-    #pretty print
-    print "Here is the JSON:"
-    pprint.pprint(data)
-    print vars(data)
+# First we need to retrieve the data
+data = get_sync_data()
+#pretty print
+print "Here is the JSON:"
+pprint.pprint(data)
+print vars(data)
 
 def get_sync_data():
     global sync_url
     r = requests.get(sync_url)
     data = r.json()
     return data
-
-if __name__ == "__main__": update()
