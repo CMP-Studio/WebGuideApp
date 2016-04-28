@@ -6,7 +6,6 @@ sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
 def update():
     # First we need to retrieve the data
     data = get_sync_data()
-
     #pretty print
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(data)
