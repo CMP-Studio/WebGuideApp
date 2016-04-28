@@ -13,7 +13,7 @@ def update():
 def get_sync_data():
     global sync_url
     r = requests.get(sync_url)
-    data = r.json
+    data = r.json()
     return data
 
 if __name__ == "__main__": update()
