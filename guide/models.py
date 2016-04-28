@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 #Hours table
-class Hour
+class Hour(models.Model):
     date_start      = models.DateField()
     date_end        = models.DateField()
     date_requested  = models.DateField()
