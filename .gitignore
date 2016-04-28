@@ -1,2 +1,5 @@
 #Settings
 settings.py
+
+#Compiled
+*.pyc
