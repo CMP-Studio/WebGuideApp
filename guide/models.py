@@ -33,7 +33,7 @@ class Artist(models.Model):
     country         = models.CharField(max_length=20)
     bio             = models.TextField()
     code            = models.CharField(max_length=40)
-    exhibition_uuid = models.ForeignKey('Exhibition', on_delete=models.CASCADE)
+    exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
 
 class Location(models.Model):
     uuid            = models.UUIDField(primary_key=True)
@@ -58,6 +58,6 @@ class Artwork(models.Model):
     code            = models.CharField(max_length=40)
     body            = models.TextField()
     share_url       = models.URLField()
-    exhibition_uuid = models.ForeignKey('Exhibition', on_delete=models.CASCADE)
-    location_uuid   = models.ForeignKey('Location', on_delete=models.CASCADE)
-    category_uuid   = models.ForeignKey('Category', on_delete=models.CASCADE)
+    exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    location        = models.ForeignKey('Location', on_delete=models.CASCADE, db_column='location_uuid')
+    category        = models.ForeignKey('Category', on_delete=models.CASCADE, db_column='category_uuid')
