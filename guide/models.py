@@ -82,7 +82,6 @@ class Artwork(models.Model):
     exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     location        = models.ForeignKey('Location', on_delete=models.CASCADE, db_column='location_uuid')
     category        = models.ForeignKey('Category', on_delete=models.CASCADE, db_column='category_uuid')
-    artist          = models.ManyToManyField('Artist', through='artistArtwork')
 
 class Media(models.Model):
     uuid            = models.UUIDField(primary_key=True)
