@@ -1,5 +1,5 @@
 import pprint
-from guide.models import *
+from models import *
 
 sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
 
