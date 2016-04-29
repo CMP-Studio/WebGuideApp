@@ -1,7 +1,7 @@
 import requests
 import json
 import pprint
-from guide.models import Location, Category, Exhibition
+from guide.models import Location, Category, Exhibition, Tour
 
 #Functions
 def import_items(obj, data):
