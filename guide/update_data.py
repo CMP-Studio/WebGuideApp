@@ -56,10 +56,8 @@ Tour.objects.all().delete()
 entries = data['tours']
 len(entries)
 for e in entries:
-    print "\nLooping"
-    pprint.pprint(e)
-    #obj = Tour()
-    #import_items(obj, e)
-    #obj.save()
+    obj = Tour()
+    import_items(obj, e)
+    obj.save()
 
 print "Done!"
