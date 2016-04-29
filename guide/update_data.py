@@ -21,8 +21,11 @@ print "Processing Exhibitions..."
 exhib = data['exhibitions']
 Exhibition.objects.all().delete()
 for e in exhib:
-    pprint.pprint(e)
-    exhib_obj = Exhibition(uuid=e['uuid'], title=e['title'])
+    exhib_obj = Exhibition()
+    fields = model._meta.get_fields()
+    for f in fields:
+        setattr(exhib_obj, f.name, e[f.name])
+    
     exhib_obj.save()
 
 print "Exhibitions are complete"
