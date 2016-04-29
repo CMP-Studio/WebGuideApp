@@ -61,3 +61,5 @@ for e in entries:
     #obj = Tour()
     #import_items(obj, e)
     #obj.save()
+
+print "Done!"
