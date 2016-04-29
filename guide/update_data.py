@@ -20,7 +20,7 @@ else:
 print "Processing Exhibitions..."
 exhib = data['exhibitions']
 Exhibition.objects.all().delete()
-for key, e in exhib.items():
+for e in exhib:
     pprint.pprint(e)
     exhib_obj = Exhibition(uuid=e.uuid, title=e.title)
     exhib_obj.save()
