@@ -1,7 +1,7 @@
 import requests
 import json
 import pprint
-#from guide.models import *
+from guide.models import Exhibition
 
 sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
 
@@ -9,7 +9,16 @@ sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
 print "Retrieving data from CMS..."
 r = requests.get(sync_url)
 data = r.json()
-print "Done!"
-print data['status']
-print "Processing exhibitions..."
-pprint.pprint(data['exhibitions'])
+#check if data status is True
+if data['status']:
+    print "Done!"
+else
+    print "Data is not good.  Exiting."
+    sys.exit(0)
+#Exhibitions
+print 'Processing Exhibitions...'
+exhib = data['exhibitions']
+Exhibition.object.all().delete()
+for key, e in exhib.items():
+    exhib_obj = Exhibition(uuid=e.uuid, title=e.title)
+    exhib_obj.save()
