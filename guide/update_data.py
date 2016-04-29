@@ -3,6 +3,14 @@ import json
 import pprint
 from guide.models import Exhibition
 
+#Functions
+def import_items(obj, data):
+    for key, value in data.iteritems():
+        print key + " = " + value
+        setattr(obj, key, value)
+
+
+#Main
 sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
 
 # First we need to retrieve the data
@@ -26,8 +34,3 @@ for e in exhib:
     exhib_obj.save()
 
 print "Exhibitions are complete"
-
-def import_items(obj, data):
-    for key, value in data.iteritems():
-        print key + " = " + value
-        setattr(obj, key, value)
