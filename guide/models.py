@@ -113,7 +113,7 @@ class Media(models.Model):
     width           = models.IntegerField(null=True, blank=True)
     height          = models.IntegerField(null=True, blank=True)
     position        = models.IntegerField(null=True, blank=True)
-    alt             = models.CharField(max_length=255)
+    alt             = models.CharField(max_length=255, null=True, blank=True)
     exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     artwork         = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
     urlThumb        = models.URLField(null=True, blank=True)
