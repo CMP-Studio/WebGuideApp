@@ -39,7 +39,7 @@ print "\nProcessing Categories..."
 entries = data['categories']
 Category.objects.all().delete()
 for e in entries:
-    obj = Location()
+    obj = Category()
     import_items(obj, e)
     obj.save()
 
