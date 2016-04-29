@@ -54,6 +54,7 @@ for e in exhib:
 print "\nProcessing Tours..."
 Tour.objects.all().delete()
 entries = data['tours']
+type(entries)
 for e in entries:
     pprint.pprint(e)
     obj = Tour()
