@@ -53,9 +53,9 @@ for e in exhib:
 #Tours
 print "\nProcessing Tours..."
 entries = data['tours']
+pprint.pprint(entries)
 Tour.objects.all().delete()
 for e in entries:
-    pprint.pprint(e)
     obj = Tour()
     import_items(obj, e)
     obj.save()
