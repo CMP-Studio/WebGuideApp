@@ -24,8 +24,9 @@ for e in exhib:
     exhib_obj = Exhibition()
     fields = Exhibition._meta.get_fields()
     for f in fields:
+        if type(f).__name__ = 'ManyToOneRel': #Skip relationships
+            continue
         setattr(exhib_obj, f.name, e[f.name])
-
     exhib_obj.save()
 
 print "Exhibitions are complete"
