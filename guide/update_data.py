@@ -1,7 +1,7 @@
 import requests
 import json
 import pprint
-from guide.models import Location, Category, Exhibition, Tour, Artist, Link, Artwork
+from guide.models import Location, Category, Exhibition, Tour, Artist, Link, Artwork, Media
 
 #Functions
 def import_items(obj, data):
@@ -123,4 +123,23 @@ for e in entries:
     import_items(obj, e)
     obj.save()
 
-print "Done!"
+#Links
+print "\nProcessing Media..."
+Media.objects.all().delete()
+entries = data['media']
+for e in entries:
+    obj = Media()
+    if Exhibition.objects.filter(uuid=e['exhibition_uuid']):
+        ex = Exhibition.objects.get(uuid=e['exhibition_uuid'])
+    else:
+        continue
+    obj.exhibition = ex
+    if Artwork.objects.filter(uuid=e['artwork_uuid']):
+        fk = Artwork.objects.get(uuid=e['artwork_uuid'])
+    else:
+        continue
+    obj.artwork = fk
+    import_items(obj, e)
+    obj.save()
+
+print "\nDone!"
