@@ -157,12 +157,12 @@ for e in entries:
         fk = Artist.objects.get(uuid=e['artist_uuid'])
     else:
         continue
-    obj.location = fk
+    obj.artist = fk
     if Artwork.objects.filter(uuid=e['artwork_uuid']):
         fk = Artwork.objects.get(uuid=e['artwork_uuid'])
     else:
         continue
-    obj.category = fk
+    obj.artwork = fk
     import_items(obj, e)
     obj.save()
 
