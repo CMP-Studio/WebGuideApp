@@ -56,9 +56,10 @@ for e in exhib:
 print "\nProcessing Tours..."
 Tour.objects.all().delete()
 entries = data['tours']
-len(entries)
 for e in entries:
     obj = Tour()
+    ex = Exhibition.objects.get(uuid=e['exhibition_uuid'])
+    obj.exhibition = ex
     import_items(obj, e)
     obj.save()
 
