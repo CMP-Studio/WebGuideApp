@@ -6,6 +6,8 @@ from guide.models import Location, Category, Exhibition, Tour
 #Functions
 def import_items(obj, data):
     for key, value in data.iteritems():
+        if str(key).endswith("_uuid"):
+            continue
         setattr(obj, key, value)
 
 

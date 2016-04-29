@@ -64,7 +64,7 @@ class Tour(models.Model):
     title           = models.CharField(max_length=255)
     subtitle        = models.CharField(max_length=255)
     body            = models.TextField(null=True, blank=True)
-    exhibition_uuid = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     artwork         = models.ManyToManyField('Artwork', through='tourArtwork')
 
 class Artist(models.Model):
@@ -77,7 +77,7 @@ class Artist(models.Model):
     country         = models.CharField(max_length=20)
     bio             = models.TextField(null=True, blank=True)
     code            = models.CharField(max_length=40)
-    exhibition_uuid      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     artwork         = models.ManyToManyField('Artwork', through='artistArtwork')
 
 class Link(models.Model):
@@ -87,8 +87,8 @@ class Link(models.Model):
     deleted_at          = models.DateTimeField(null=True, blank=True)
     title               = models.CharField(max_length=255)
     url                 = models.URLField(null=True, blank=True)
-    exhibition_uuid     = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
-    artist_uuid         = models.ForeignKey('Artist', on_delete=models.CASCADE, db_column='artist_uuid')
+    exhibition          = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    artist              = models.ForeignKey('Artist', on_delete=models.CASCADE, db_column='artist_uuid')
 
 class Artwork(models.Model):
     uuid                = models.UUIDField(primary_key=True)
@@ -99,9 +99,9 @@ class Artwork(models.Model):
     code                = models.CharField(max_length=40)
     body                = models.TextField(null=True, blank=True)
     share_url           = models.URLField(null=True, blank=True)
-    exhibition_uuid     = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
-    location_uuid       = models.ForeignKey('Location', on_delete=models.CASCADE, db_column='location_uuid')
-    category_uuid       = models.ForeignKey('Category', on_delete=models.CASCADE, db_column='category_uuid')
+    exhibition          = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    location            = models.ForeignKey('Location', on_delete=models.CASCADE, db_column='location_uuid')
+    category            = models.ForeignKey('Category', on_delete=models.CASCADE, db_column='category_uuid')
 
 class Media(models.Model):
     uuid            = models.UUIDField(primary_key=True)
@@ -114,8 +114,8 @@ class Media(models.Model):
     height          = models.IntegerField(null=True, blank=True)
     position        = models.IntegerField(null=True, blank=True)
     alt             = models.CharField(max_length=255)
-    exhibition_uuid = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
-    artwork_uuid    = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
+    exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    artwork         = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
     urlThumb        = models.URLField(null=True, blank=True)
     urlSmall        = models.URLField(null=True, blank=True)
     urlMedium       = models.URLField(null=True, blank=True)
@@ -127,9 +127,9 @@ class artistArtwork(models.Model):
     created_at      = models.DateTimeField(null=True, blank=True)
     updated_at      = models.DateTimeField(null=True, blank=True)
     deleted_at      = models.DateTimeField(null=True, blank=True)
-    exhibition_uuid = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
-    artist_uuid     = models.ForeignKey('Artist', on_delete=models.CASCADE, db_column='artist_uuid')
-    artwork_uuid    = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
+    exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    artist          = models.ForeignKey('Artist', on_delete=models.CASCADE, db_column='artist_uuid')
+    artwork         = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
 
 class tourArtwork(models.Model):
     uuid            = models.UUIDField(primary_key=True)
@@ -138,5 +138,5 @@ class tourArtwork(models.Model):
     deleted_at      = models.DateTimeField(null=True, blank=True)
     position        = models.IntegerField(null=True, blank=True)
     exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
-    tour_uuid       = models.ForeignKey('Tour', on_delete=models.CASCADE, db_column='tour_uuid')
-    artwork_uuid    = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
+    tour            = models.ForeignKey('Tour', on_delete=models.CASCADE, db_column='tour_uuid')
+    artwork         = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
