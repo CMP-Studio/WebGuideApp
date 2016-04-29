@@ -31,6 +31,7 @@ for e in entries:
     obj = Location()
     import_items(obj, e)
     obj.save()
+
 print "\nLocations are complete"
 
 #Category
@@ -41,6 +42,7 @@ for e in entries:
     obj = Location()
     import_items(obj, e)
     obj.save()
+
 print "\nCategories are complete"
 
 #Exhibitions
@@ -51,4 +53,5 @@ for e in exhib:
     exhib_obj = Exhibition()
     import_items(exhib_obj, e)
     exhib_obj.save()
+
 print "\nExhibitions are complete"
