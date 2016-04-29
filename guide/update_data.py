@@ -58,6 +58,7 @@ Tour.objects.all().delete()
 entries = data['tours']
 for e in entries:
     obj = Tour()
+    print e['exhibition_uuid']
     ex = Exhibition.objects.get(uuid=e['exhibition_uuid'])
     obj.exhibition = ex
     import_items(obj, e)
