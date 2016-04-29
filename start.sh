@@ -1,13 +1,13 @@
 #!/bin/bash
 
-NAME="guideapp"                              #Name of the application (*)
-DJANGODIR=/var/www/guideapp           # Django project directory (*)
-SOCKFILE=/var/www/guideapp/run/gunicorn.sock        # we will communicate using this unix socket (*)
-USER=www-data                                       # the user to run as (*)
-GROUP=www-data                                     # the group to run as (*)
-NUM_WORKERS=3                                    # how many worker processes should Gunicorn spawn (*)
-DJANGO_SETTINGS_MODULE=guideapp.settings             # which settings file should Django use (*)
-DJANGO_WSGI_MODULE=guideapp.wsgi                     # WSGI module name (*)
+NAME="guideapp"                             #Name of the application (*)
+DJANGODIR=/var/www/guideapp                 # Django project directory (*)
+SOCKFILE=/var/sockets/gunicorn.sock         # we will communicate using this unix socket (*)
+USER=www-data                               # the user to run as (*)
+GROUP=www-data                              # the group to run as (*)
+NUM_WORKERS=3                               # how many worker processes should Gunicorn spawn (*)
+DJANGO_SETTINGS_MODULE=guideapp.settings    # which settings file should Django use (*)
+DJANGO_WSGI_MODULE=guideapp.wsgi            # WSGI module name (*)
 
 echo "Starting $NAME as `whoami`"
 
