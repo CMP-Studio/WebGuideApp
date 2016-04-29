@@ -64,7 +64,7 @@ class Tour(models.Model):
     title           = models.CharField(max_length=255)
     subtitle        = models.CharField(max_length=255)
     body            = models.TextField(null=True, blank=True)
-    exhibition_uuid      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
+    exhibition_uuid = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     artwork         = models.ManyToManyField('Artwork', through='tourArtwork')
 
 class Artist(models.Model):
