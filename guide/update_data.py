@@ -32,8 +32,6 @@ for e in entries:
     import_items(obj, e)
     obj.save()
 
-print "\nLocations are complete"
-
 #Category
 print "\nProcessing Categories..."
 entries = data['categories']
@@ -42,8 +40,6 @@ for e in entries:
     obj = Category()
     import_items(obj, e)
     obj.save()
-
-print "\nCategories are complete"
 
 #Exhibitions
 print "\nProcessing Exhibitions..."
@@ -54,4 +50,11 @@ for e in exhib:
     import_items(exhib_obj, e)
     exhib_obj.save()
 
-print "\nExhibitions are complete"
+#Category
+print "\nProcessing Tours..."
+entries = data['tours']
+Tour.objects.all().delete()
+for e in entries:
+    obj = Tour()
+    import_items(obj, e)
+    obj.save()
