@@ -6,7 +6,6 @@ from guide.models import Exhibition
 #Functions
 def import_items(obj, data):
     for key, value in data.iteritems():
-        print unicode(str(key), "utf-8") + " = " + unicode(str(value), "utf-8")
         setattr(obj, key, value)
 
 
