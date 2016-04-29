@@ -22,7 +22,7 @@ exhib = data['exhibitions']
 Exhibition.objects.all().delete()
 for e in exhib:
     pprint.pprint(e)
-    exhib_obj = Exhibition(uuid=e.uuid, title=e.title)
+    exhib_obj = Exhibition(uuid=e['uuid'], title=e['title'])
     exhib_obj.save()
 
 print "Exhibitions are complete"
