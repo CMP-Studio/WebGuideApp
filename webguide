@@ -1,5 +1,5 @@
-upstream test_server {
-  server unix: /var/www/guideapp/run/gunicorn.sock fail_timeout=10s;
+upstream up_server {
+  server unix:/var/sockets/gunicorn.sock fail_timeout=10s;
 }
 
 # This is not neccessary - it's just commonly used
@@ -35,7 +35,7 @@ server {
         proxy_redirect off;
 
         if (!-f $request_filename) {
-            proxy_pass http://test_server;
+            proxy_pass http://up_server;
             break;
         }
     }
