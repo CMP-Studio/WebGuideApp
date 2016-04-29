@@ -44,7 +44,7 @@ class Exhibition(models.Model):
     deleted_at              = models.DateTimeField(null=True, blank=True)
     title                   = models.CharField(max_length=255, null=True, blank=True)
     subtitle                = models.CharField(max_length=255, null=True, blank=True)
-    is_live                 = models.BooleanField(null=True, blank=True)
+    is_live                 = models.BooleanField(default=False)
     position                = models.IntegerField(null=True, blank=True)
     sponsor                 = models.CharField(max_length=255, null=True, blank=True)
     bg_iphone_updated_at    = models.DateTimeField(null=True, blank=True)
