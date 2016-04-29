@@ -6,7 +6,7 @@ from guide.models import Exhibition
 #Functions
 def import_items(obj, data):
     for key, value in data.iteritems():
-        print str(key) + " = " + str(value)
+        print key.encode('utf-8') + " = " + value.encode('utf-8')
         setattr(obj, key, value)
 
 
