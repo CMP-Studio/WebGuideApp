@@ -10,6 +10,6 @@ print "Retrieving data from CMS..."
 r = requests.get(sync_url)
 data = r.json()
 print "Done!"
-print data.status
+print data['status']
 print "Processing exhibitions..."
-pprint.pprint(data.exhibitions)
+pprint.pprint(data['exhibitions'])
