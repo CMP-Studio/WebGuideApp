@@ -13,6 +13,7 @@ ul.menu
   text-align: left;
   font-size: 2em;
   color: #2B2B2B;
+  padding-left: 10px;
 }
 
 .menu a
