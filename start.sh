@@ -28,5 +28,4 @@ exec gunicorn ${DJANGO_WSGI_MODULE}:application \
   --user $USER \
   --bind=unix:$SOCKFILE \
   --reload \
-  --spew \
-  -–pid /tmp/gunicorn.pid &
+  --spew
