@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from guide.update_data import update_from_CMS
-from .models import Exhibition
+from guide.models import Exhibition
 
 def index(request):
     exhibs = Exhibition.objects.filter(is_live=True)
