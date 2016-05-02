@@ -12,7 +12,7 @@ def import_items(obj, data):
 
 
 #Main
-def update_data():
+def update_from_CMS:
     sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
     # First we need to retrieve the data
     print "\nRetrieving data from CMS..."
@@ -193,4 +193,4 @@ def update_data():
     print "\nDone!"
 
 if __name__ == "__main__":
-    update_data()
+    update_from_CMS()
