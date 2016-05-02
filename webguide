@@ -5,11 +5,11 @@ upstream up_server {
 # This is not neccessary - it's just commonly used
 # it just redirects example.com -> www.example.com
 # so it isn't treated as two separate websites
-server {
-        listen 80;
-        server_name example.com;
-        return 301 $scheme://www.example.com$request_uri;
-}
+#server {
+#        listen 80;
+#        server_name example.com;
+#        return 301 $scheme://www.example.com$request_uri;
+#}
 
 server {
     listen   80 default_server;
@@ -21,12 +21,12 @@ server {
 
     location /static/ {
         autoindex on;
-        alias    /var/www/guideapp/ourcase/static/;
+        alias    /var/www/guideapp/guide/static/;
     }
 
     location /media/ {
         autoindex on;
-        alias    /var/www/guideapp/ourcase/media/;
+        alias    /var/www/guideapp/guide/media/;
     }
 
     location / {
@@ -51,6 +51,6 @@ server {
     # Error pages
     error_page 500 502 503 504 /500.html;
     location = /500.html {
-        root  /var/www/guideapp/ourcase/static/;
+        root  /var/www/guideapp/guide/static/;
     }
 }
