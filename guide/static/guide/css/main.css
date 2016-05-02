@@ -3,6 +3,7 @@
 .menu ul
 {
   width:100%;
+  padding-left: 0px;
 }
 
 .menu li {
@@ -12,4 +13,9 @@
   text-align: center;
   font-size: 2em;
   color: #2B2B2B;
+}
+
+.menu a
+{
+    color: #2B2B2B;
 }
