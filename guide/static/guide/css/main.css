@@ -23,13 +23,14 @@ ul.menu
   border-bottom: 1px solid #333;
   text-align: left;
   font-size: 2em;
-  color: #777;
+  color: #333;
   padding-left: 10px;
 }
 
 .menu a
 {
-    color: #777;
+    color: #333;
+    text-decoration: none;
 }
 
 .menu a:hover
