@@ -3,6 +3,12 @@
   font-size: 2em;
 }
 
+nav.topbar
+{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
 /* List menus */
 
 ul.menu
