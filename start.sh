@@ -28,4 +28,4 @@ exec gunicorn ${DJANGO_WSGI_MODULE}:application \
   --user $USER \
   --bind=unix:$SOCKFILE \
   --reload=True \
-  -–pid /tmp/gunicorn.pid &
+  –pid /tmp/gunicorn.pid &
