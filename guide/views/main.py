@@ -7,7 +7,7 @@ from guide.models import Exhibition
 def index(request):
     exhibs = Exhibition.objects.filter(is_live=True)
     context = {'exhibitions': exhibs}
-    return render(request, 'index.html')
+    return render(request, 'index.html', context)
 
 def update_data(request):
     update_from_CMS()
