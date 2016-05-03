@@ -32,6 +32,11 @@ nav.topbar
   margin: 0 !important;
 }
 
+.navbar-nav>li>a
+{
+  margin-top: 7.5px;
+}
+
 .page-title
 {
   position: relative;
@@ -42,7 +47,7 @@ nav.topbar
   max-width: 60vw;
   margin-left:10vw;
   max-height:30px;
-  margin-top: 30px;
+  margin-top: 17.5px;
 
 }
 
