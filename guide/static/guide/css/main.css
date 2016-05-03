@@ -1,6 +1,15 @@
+body
+{
+  height:100vh;
+  max-height:100vh;
+}
+
 /* Top nav */
 nav.topbar
 {
+  height: 65px;
+  max-height: 65px;
+
   background-color: #333;
   color:#f8f8f8;
   border-bottom-left-radius: 0px;
