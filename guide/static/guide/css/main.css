@@ -27,6 +27,11 @@ nav.topbar
 
 }
 
+.navbar-nav
+{
+  margin: 0 !important;
+}
+
 .page-title
 {
   position: relative;
@@ -120,7 +125,7 @@ ul.menu
   color: #333;
   padding-left: 10px;
 }
-.menu li:first
+.menu li:first-of-type
 {
   border-top: 1px solid #333;
 }
