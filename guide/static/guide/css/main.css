@@ -77,7 +77,8 @@ float: right!important;
 
 .background
 {
-
+  display:block;
+  margin:auto;
   width: auto;
 }
 
