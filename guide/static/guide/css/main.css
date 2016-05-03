@@ -2,6 +2,8 @@ body
 {
   height:100vh;
   max-height:100vh;
+  width: 100vw;
+  
   overflow:hidden;
 
 }
@@ -75,16 +77,23 @@ float: right!important;
 
 .background
 {
-  max-height: 150%;
-  max-width: 150%;
+  /* max-height: 100%; */
+  /* max-width: 9000%; */
   width: auto;
 }
 
 
 /* Main Menu */
+.main_menu
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right:0;
+}
 .main_menu li
 {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 
