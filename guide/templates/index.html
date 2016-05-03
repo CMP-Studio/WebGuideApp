@@ -8,7 +8,9 @@
 {% endblock %}
 
 {% block content %}
-  <img class="background" src="{{ bg_img }}" alt="Decorative background"></img>
+  <div class="background-holder">
+    <img class="background" src="{{ bg_img }}" alt="Decorative background"></img>
+  </div>
   {% include "elements/menu.html" %}
 
 {% endblock %}

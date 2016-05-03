@@ -2,6 +2,8 @@ body
 {
   height:100vh;
   max-height:100vh;
+  overflow:hidden;
+
 }
 
 /* Top nav */
@@ -54,6 +56,35 @@ margin-right: -15px !important;
 
 .navbar-right {
 float: right!important;
+}
+
+/* Background Image */
+.background-holder
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -100000;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+}
+
+.background
+{
+  max-height: 150%;
+  max-width: 150%;
+  width: auto;
+}
+
+
+/* Main Menu */
+.main_menu li
+{
+  opacity: 0.8;
 }
 
 
