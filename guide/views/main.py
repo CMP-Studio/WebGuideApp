@@ -6,7 +6,9 @@ from guide.models import Exhibition
 
 def index(request):
     exhibs = Exhibition.objects.filter(is_live=True)
-    context = {'exhibitions': exhibs}
+    r_exhib = Exhibition.objects.filter(is_live=True)order_by('?').first() #get a random exhibitions
+    r_img = r_exhib.bg_ipad_retina
+    context = {'bg_img': r_img}
     return render(request, 'index.html', context)
 
 def update_data(request):
