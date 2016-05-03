@@ -73,6 +73,7 @@ float: right!important;
   height: 100%;
   margin: 0 auto;
   background-color: #f8f8f8;
+  overflow: hidden;
 }
 
 .background
@@ -80,6 +81,8 @@ float: right!important;
   display:block;
   margin:auto;
   width: auto;
+  max-height:150%;
+  max-width:150%;
 }
 
 
