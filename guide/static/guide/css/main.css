@@ -1,12 +1,21 @@
 /* Top nav */
-.topbar i {
-  font-size: 2em;
-}
-
 nav.topbar
 {
+  background-color: #333;
+  color:#f8f8f8;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+
+.topbar i {
+  font-size: 2em;
+
+}
+
+.page-title img, .page-title .logo
+{
+  margin:1px;
+  max-height:48px;
 }
 
 /* No collapse */
