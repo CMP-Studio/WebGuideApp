@@ -18,10 +18,14 @@ nav.topbar
 {
   max-width: 70vw;
   margin-left:10vw;
-  max-height:65px;
+  max-height:60px;
+/* Centering */
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
-/* No collapse */
+/* No collapse o navbars */
 .navbar-collapse.collapse {
 display: block!important;
 }
