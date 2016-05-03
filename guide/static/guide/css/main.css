@@ -37,7 +37,7 @@ nav.topbar
   max-width: 70vw;
   margin-left:10vw;
   max-height:50px;
-  margin-bottom: 7.5px;
+  margin-top: 7.5px;
 
 }
 
@@ -81,7 +81,7 @@ float: right!important;
   margin:auto;
   height: auto;
   max-height:100%;
-  max-width:100%;
+  max-width:500%;
 }
 
 
