@@ -39,10 +39,10 @@ nav.topbar
 
 .page-title img, .page-title .logo
 {
-  max-width: 70vw;
+  max-width: 60vw;
   margin-left:10vw;
   max-height:50px;
-  margin-top: 7.5px;
+  margin-top: 10px;
 
 }
 
@@ -125,7 +125,7 @@ ul.menu
   color: #333;
   padding-left: 10px;
 }
-.menu li:first-of-type
+.menu a:first-of-type li
 {
   border-top: 1px solid #333;
 }
