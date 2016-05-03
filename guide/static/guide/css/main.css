@@ -5,6 +5,8 @@ nav.topbar
   color:#f8f8f8;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  border-bottom: 1px solid #777;
+  height:50px;
 }
 
 .topbar i {
@@ -16,6 +18,7 @@ nav.topbar
 {
   margin:1px;
   max-height:48px;
+  max-width: 50vw;
 }
 
 /* No collapse */
