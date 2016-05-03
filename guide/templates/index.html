@@ -1,4 +1,8 @@
-{% extends 'master.html' %}
+{% extends 'masterpages/home.html' %}
+
+{% block page_title %}
+  <img class="logo" src="{% static "guide/img/logo.png" %}" alt="Carnegie Museums of Art and Natural History"></img>
+{% endblock %}
 
 {% block content %}
   {% include "elements/menu.html" %}
