@@ -6,19 +6,18 @@ nav.topbar
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   border-bottom: 1px solid #777;
-  height:50px;
 }
 
 .topbar i {
   font-size: 2em;
+  color:#f8f8f8;
 
 }
 
 .page-title img, .page-title .logo
 {
-  margin:1px;
-  max-height:48px;
-  max-width: 50vw;
+  max-width: 70vw;
+  margin-right:10vw;
 }
 
 /* No collapse */
