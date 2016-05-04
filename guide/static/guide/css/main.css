@@ -90,6 +90,7 @@ nav.topbar
   line-height:63px;
   max-height: 63px;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media (min-width: 768px)
 {
