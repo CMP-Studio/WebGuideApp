@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import requests
 
 news_url = "http://guide-cms-prod.s3.amazonaws.com/feeds/news.html"
 
