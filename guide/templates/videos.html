@@ -1,0 +1,11 @@
+{% extends 'masterpages/main.html' %}
+
+{% load staticfiles %}
+
+{% block page_title %}
+  Museum Videos
+{% endblock %}
+
+{% block content %}
+  {{videos_text|safe}}
+{% endblock %}
