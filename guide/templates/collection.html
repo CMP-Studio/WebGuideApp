@@ -4,3 +4,7 @@
 {% block page_title %}
   {{ c.title }}
 {% endblock %}
+
+{% block back_link %}
+  {% url 'collections_list' %}
+{% endblock %}

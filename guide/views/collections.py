@@ -8,7 +8,7 @@ def collections_list(request):
     context = {'collections': colls}
     return render(request, 'collections.html', context)
 
-def collection(request, uuid):
+def collection(request, uuid, seo):
     coll = Exhibition.objects.filter(uuid=uuid)
     if coll:
         context = {'c': coll.first()}

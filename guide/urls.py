@@ -7,6 +7,6 @@ urlpatterns = [
     url(r'^news$', views.news_show, name='news_show'),
     url(r'^videos$', views.videos_show, name='videos_show'),
     url(r'^collections$', views.collections_list, name='collections_list'),
-    url(r'^collections/(?P<uuid>[a-zA-Z0-9\-]+)/[a-z0-9\-]+$', views.collection, name='collection'),
+    url(r'^collections/(?P<uuid>[a-zA-Z0-9\-]+)/(?P<seo>[a-z0-9\-]+)$', views.collection, name='collection'),
     url(r'^forceupdate$', views.update_data, name='force_update')
 ]
