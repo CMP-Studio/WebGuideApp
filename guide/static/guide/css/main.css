@@ -22,11 +22,20 @@ nav.topbar
   border-bottom: 1px solid #777;
 }
 
+.topbar .container-fluid
+{
+  padding:0;
+}
+
 .topbar i {
   font-size: 1.5em;
   color:#f8f8f8;
   line-height:48px;
 
+}
+.nav-btn
+{
+  width:10vw;
 }
 
 .navbar-nav
@@ -35,9 +44,12 @@ nav.topbar
 }
 .navbar-right
 {
-  margin-right:15px;
+  margin-right:5vw;
 }
-
+.navbar-left
+{
+  margin-left:5vw;
+}
 .navbar-nav>li>a
 {
   margin-top: 3.5px;
