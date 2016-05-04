@@ -30,6 +30,34 @@ nav.topbar
 {
   padding:0;
 }
+.navbar-nav
+{
+  margin: 0 !important;
+}
+
+/* Top nav positioning */
+.navbar-left
+{
+  margin-left:5% !important;
+}
+.nav-btn
+{
+  width:10%;
+  text-align: center;
+}
+
+.page-title
+{
+  position: relative;
+  text-align:center;
+  width:70%;
+}
+
+.navbar-right
+{
+  margin-right:5% !important;
+}
+
 
 .topbar i {
   font-size: 1.5em;
@@ -37,39 +65,19 @@ nav.topbar
   line-height:48px;
 
 }
-.nav-btn
-{
-  width:10vw;
-  text-align: center;
-}
 
-.navbar-nav
-{
-  margin: 0 !important;
-}
-.navbar-right
-{
-  margin-right:5vw !important;
-}
-.navbar-left
-{
-  margin-left:5vw !important;
-}
+
+
 .navbar-nav>li>a
 {
   margin-top: 3.5px;
 }
 
-.page-title
-{
-  position: relative;
-  text-align:center;
-  width:70vw;
-}
+
 .page-title.home-page
 {
-  margin-left: 25vw;
-  margin-right: 25vw;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .page-title h1
