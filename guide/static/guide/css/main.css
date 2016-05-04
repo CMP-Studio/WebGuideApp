@@ -23,7 +23,7 @@ nav.topbar
 }
 
 .topbar i {
-  font-size: 2em;
+  font-size: 1.5em;
   color:#f8f8f8;
 
 }
@@ -48,9 +48,9 @@ nav.topbar
 .page-title h1
 {
 
-  font-size: 1.25em;
+  font-size: 0.1vw;
   line-height:63px;
-  max-width: 40vw;
+  max-width: 30vw;
   text-overflow: ellipsis;
 }
 
