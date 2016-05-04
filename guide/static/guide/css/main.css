@@ -49,11 +49,11 @@ nav.topbar
 }
 .navbar-right
 {
-  margin-right:3vw !important;
+  margin-right:5vw !important;
 }
 .navbar-left
 {
-  margin-left:3vw !important;
+  margin-left:5vw !important;
 }
 .navbar-nav>li>a
 {
@@ -90,7 +90,7 @@ nav.topbar
 }
 .nav>li>a
 {
-  padding:5px;
+  padding:0;
 }
 
 /* No collapse o navbars */
