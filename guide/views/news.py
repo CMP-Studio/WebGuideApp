@@ -6,7 +6,7 @@ news_url = "http://guide-cms-prod.s3.amazonaws.com/feeds/news.html"
 
 def news_show(request):
     r = requests.get(news_url)
-    s = re.search('(<style type="text/css">[\s\S]+)(</body>)', r.text)
+    s = re.search('(<style type="text/css">[\s\S]+</ul>)', r.text)
     if s:
         context = {'news_text': s.group(0)}
     else:
