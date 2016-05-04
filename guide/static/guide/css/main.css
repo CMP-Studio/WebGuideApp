@@ -109,6 +109,10 @@ nav.topbar
 display: block!important;
 }
 
+.container-fluid>.navbar-collapse {
+  margin: 0 !important;
+}
+
 .navbar-nav>li, .navbar-nav {
 float: left !important;
 }
