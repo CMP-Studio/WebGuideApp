@@ -1,0 +1,19 @@
+{% extends 'masterpages/main.html' %}
+{% load staticfiles %}
+
+{% block page_title %}
+  Explore Art and Specimens
+{% endblock %}
+
+{% block content %}
+  <ul class='menu'>
+    {% for c in collections %}
+      <a href="/collections/{{ c.url }}">
+        <li>
+          <p class='title'>{{ c.title }}</p>
+          <p class='subtitle'>{{ c.subtitle }}</p>
+        </li>
+      </a>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -56,6 +56,10 @@ class Exhibition(models.Model):
     bg_ipad_normal          = models.URLField(null=True, blank=True)
     bg_ipad_retina          = models.URLField(null=True, blank=True)
 
+    def url(self):
+        url = title.replace(' ', '-').lower()
+        return url
+
 class Tour(models.Model):
     uuid            = models.UUIDField(primary_key=True)
     created_at      = models.DateTimeField(null=True, blank=True)

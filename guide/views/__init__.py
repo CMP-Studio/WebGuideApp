@@ -1,3 +1,3 @@
 from main import *
-from exhibition import *
+from collections import *
 from news import *

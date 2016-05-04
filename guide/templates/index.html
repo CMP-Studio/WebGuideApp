@@ -7,10 +7,42 @@
   <img class="logo" src="{% static "guide/img/logo.png" %}" alt="Carnegie Museums of Art and Natural History"></img>
 {% endblock %}
 
+{% block page_title_acc %}
+  Carnegie Museums of Art and Natural History Web Guide
+{% endblock %}
+
 {% block content %}
   <div class="background-holder">
     <img class="background" src="{{ bg_img }}" alt="Decorative background"></img>
   </div>
-  {% include "elements/menu.html" %}
+  <nav class="main_menu">
+    <ul class='menu'>
+      <a href="/visit">
+        <li>
+          Hours and Location
+        </li>
+      </a>
+      <a href="/collections">
+        <li>
+          Explore Art and Specimens
+        </li>
+      </a>
+      <a href="/news">
+        <li>
+          Museum News
+        </li>
+      </a>
+      <a href="/videos">
+        <li>
+          Museum Videos
+        </li>
+      </a>
+      <a href="/connect">
+        <li>
+          Connect
+        </li>
+      </a>
+    </ul>
+  </nav>
 
 {% endblock %}
