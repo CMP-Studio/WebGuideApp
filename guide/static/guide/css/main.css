@@ -65,7 +65,7 @@ nav.topbar
 .topbar i {
   font-size: 1.5em;
   color:#f8f8f8;
-  line-height:48px;
+  line-height:57px;
 
 }
 
@@ -90,6 +90,13 @@ nav.topbar
   line-height:63px;
   max-height: 63px;
   text-overflow: ellipsis;
+}
+@media (min-width:768)
+{
+  .page-title h1
+  {
+    font-size: 2em;
+  }
 }
 
 .page-title img, .page-title .logo
