@@ -1,6 +1,10 @@
-{% extends 'masterpages/home.html' %}
+{% extends 'masterpages/main.html' %}
 
 {% load staticfiles %}
+
+{% block page_title %}
+  Museum News
+{% endblock %}
 
 {% block content %}
   {{news_text|safe}}
