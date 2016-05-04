@@ -26,6 +26,10 @@ nav.topbar
 {
   padding:0;
 }
+.topbar-nav
+{
+  padding:0;
+}
 
 .topbar i {
   font-size: 1.5em;
