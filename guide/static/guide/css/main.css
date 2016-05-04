@@ -60,7 +60,7 @@ nav.topbar
 {
   position: relative;
   text-align:center;
-  width:60vw;
+  width:70vw;
 }
 
 .page-title h1
@@ -74,8 +74,7 @@ nav.topbar
 
 .page-title img, .page-title .logo
 {
-  margin-left:10vw;
-  max-width: 60vw;
+  max-width: 70vw;
   max-height:30px;
   margin-top: 17.5px;
 
