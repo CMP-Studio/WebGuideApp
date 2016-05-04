@@ -62,6 +62,11 @@ nav.topbar
   text-align:center;
   width:70vw;
 }
+.page-title.home-page
+{
+  margin-left: :30vw;
+  margin-right: 30vw;
+}
 
 .page-title h1
 {
