@@ -91,7 +91,7 @@ nav.topbar
   max-height: 63px;
   text-overflow: ellipsis;
 }
-@media (min-width:768)
+@media (min-width: 768px)
 {
   .page-title h1
   {
