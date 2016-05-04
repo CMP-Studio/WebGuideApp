@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+from django.utils.text import slugify
 from django.db import models
 
 #Hours table
@@ -57,7 +58,7 @@ class Exhibition(models.Model):
     bg_ipad_retina          = models.URLField(null=True, blank=True)
 
     def url(self):
-        url = self.title.replace(' ', '-').lower()
+        url = slugify(self.title)
         return url
 
 class Tour(models.Model):
