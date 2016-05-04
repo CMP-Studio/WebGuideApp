@@ -25,12 +25,17 @@ nav.topbar
 .topbar i {
   font-size: 1.5em;
   color:#f8f8f8;
+  line-height:55px;
 
 }
 
 .navbar-nav
 {
   margin: 0 !important;
+}
+.navbar-right
+{
+  margin-right:15px;
 }
 
 .navbar-nav>li>a
