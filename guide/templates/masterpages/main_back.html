@@ -1,8 +1,71 @@
-{% include "masterpages/parts/first.html" %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      {% block tab_title %}
+      Oakland Guide
+      {% endblock %}
+    </title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!--  App CSS -->
+    <link rel="stylesheet" href="{% static "guide/css/main.css" %}">
+
+    {% block head %}
+
+    {% endblock %}
+
+  </head>
+  <body>
+    <nav class="topbar navbar navbar-default">
+      <div class="container-fluid">
+        <div class="topbar-nav collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
             <li class="back-btn nav-btn">
               <a class="" href="{% block back_link %}{% endblock %}">
                 <i class="fa fa-fw fa-chevron-left" aria-label="Back to previous page"></i>
               </a>
             </li>
-{% include "masterpages/parts/home_btn.html" %}
-{% include "masterpages/parts/last.html" %}
+            <li class="home-btn nav-btn">
+              <a class="" href="/">
+                <i class="fa fa-fw fa-home" aria-label="Home"></i>
+              </a>
+            </li>
+            <li class="page-title">
+              <h1>
+                {% block page_title %}
+
+                {% endblock %}
+                </h1>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="find-btn nav-btn">
+                <a class="" href="/find">
+                  <i class="fa fa-fw fa-search" aria-label="Search for a code"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+
+      {% endblock %}
+
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Bootstrap -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>
