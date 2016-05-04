@@ -57,7 +57,7 @@ class Exhibition(models.Model):
     bg_ipad_retina          = models.URLField(null=True, blank=True)
 
     def url(self):
-        url = title.replace(' ', '-').lower()
+        url = self.title.replace(' ', '-').lower()
         return url
 
 class Tour(models.Model):
