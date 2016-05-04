@@ -79,17 +79,18 @@ nav.topbar
 
 .page-title.home-page
 {
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left:10vw;
 }
 
 .page-title h1
 {
   margin:0;
+  width:70vw;
   font-size: 3.75vw;
   line-height:63px;
   max-height: 63px;
   text-overflow: ellipsis;
+  overflow:hidden;
   white-space: nowrap;
 }
 @media (min-width: 768px)
