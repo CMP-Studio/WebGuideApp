@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from guide.models import Exhibition
 
 def collections_list(request):
-    collss = Exhibition.objects.filter(is_live=True)
+    colls = Exhibition.objects.filter(is_live=True)
     context = {'collections': colls}
     return render(request, 'collections.html', context)
 
