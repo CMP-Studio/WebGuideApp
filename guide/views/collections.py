@@ -10,8 +10,8 @@ def collections_list(request):
 
 def collection(request, uuid):
     coll = Exhibition.objects.filter(uuid=uuid)
-    context = {'collection': coll}
     if coll:
+        context = {'c': coll.first()}
         return render(request, "collection.html" , context)
     else:
         return HttpResponse("Not Found")
