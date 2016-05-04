@@ -40,23 +40,25 @@ nav.topbar
 }
 .navbar-left
 {
-  margin-left:5% !important;
+  margin-left:5vw !important;
+  width:80vw;
 }
 .nav-btn
 {
-  width:10%;
+  width:10vw;
   text-align: center;
 }
 
 .page-title
 {
   text-align:center;
-  width:70%;
+  width:70vw;
 }
 
 .navbar-right
 {
-  margin-right:5% !important;
+  margin-right:5vw !important;
+  width:10vw;
 }
 
 
