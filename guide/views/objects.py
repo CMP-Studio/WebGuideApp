@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.db.models import Prefetch
 
 from guide.models import Exhibition, Artwork, Media
 
