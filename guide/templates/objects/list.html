@@ -25,8 +25,11 @@
         <li>
           <p class='title'>{{ a.title }}</p>
           <p class='subtitle'>
-            {% for p in a.artist_set.all %}
-              {{ p.first_name }} {{p.last_name}}
+            {% for p in a.artist_set.all|dictsort:"last_name" %}
+              {% if forloop.counter > 1 %}
+                ,&nbsp;
+              {% endif %}
+              {{ p.first_name }}&nbsp;{{p.last_name}}
             {% endfor %}
           </p>
         </li>
