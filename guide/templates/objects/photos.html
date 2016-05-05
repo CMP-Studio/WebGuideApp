@@ -13,7 +13,7 @@
   <div class='canvas'>
     {% for i in media %}
       <a href='/test' aria-label='Link to {{i.artwork.title}}'>
-        <img src='{{ i.urlThumb }}' alt='{{ i.alt }}'></img>
+        <img src='{{ i.urlSmall }}' alt='{{ i.alt }}'></img>
       </a>
     {% endfor %}
   </div>
