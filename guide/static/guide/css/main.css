@@ -215,13 +215,13 @@ ul.menu
 .menu .title
 {
   margin-bottom:5px;
-  line-height: 25px;
+  line-height: 30px;
 }
 
 .menu .subtitle
 {
   font-size: 1em;
-  line-height: 15px;
+  line-height: 20px;
   color: #555;
 }
 
