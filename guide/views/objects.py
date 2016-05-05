@@ -25,7 +25,7 @@ def object_list(request, slug):
 def object_cats(request, slug):
         coll = Exhibition.objects.filter(slug=slug, is_live=True)
         if coll:
-            cats = Category.objects.artwork_set.filter(exhibition=slug)
+            cats = Category.objects.filter(artwork_set__exhibition=coll)
             context = {'c': coll.first(), 'cats': cats}
             return render(request, "objects/categories.html" , context)
         else:
