@@ -1,0 +1,19 @@
+{% extends 'masterpages/main_back.html' %}
+{% load staticfiles %}
+
+{% block page_title %}
+  {{ c.title }}
+{% endblock %}
+
+{% block back_link %}
+  {% url 'collection' c.slug %}
+{% endblock %}
+
+{% block content %}
+  <div class='canvas'>
+    {% for a in c.artwork %}
+      <p>{{a.title}}</p>
+    {% endfor %}
+  </div>
+  {% include 'elements/object_mode.html' %}
+{% endblock %}

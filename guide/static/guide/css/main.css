@@ -188,6 +188,7 @@ ul.menu
   border-bottom: 1px solid #333;
   text-align: left;
   font-size: 1.25em;
+  line-height: 40px;
   color: #333;
   padding-left: 10px;
 }

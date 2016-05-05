@@ -2,4 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def object_photos(request, slug):
-    HttpResponse(slug)
+    coll = Exhibition.objects.filter(slug=slug)
+    if coll:
+        context = {'c': coll.first()}
+        return render(request, "objects/photos.html" , context)
+    else:
+        return HttpResponse("Not Found")
