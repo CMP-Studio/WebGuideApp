@@ -235,6 +235,7 @@ ul.menu
   color:#f8f8f8;
   margin-left:10%;
   margin-right:10%;
+  display:block;
 }
 .object-footer a:hover
 {
