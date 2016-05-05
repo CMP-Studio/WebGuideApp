@@ -129,6 +129,10 @@ float: left !important;
 .navbar-right {
 float: right!important;
 }
+.main-content
+{
+  margin-top:65px;
+}
 
 /* Background Image */
 .background-holder
