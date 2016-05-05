@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from guide.models import Exhibition, Artwork
+from guide.models import Exhibition, Artwork, Media
 
 def object_photos(request, slug):
     coll = Exhibition.objects.filter(slug=slug)
