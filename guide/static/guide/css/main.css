@@ -211,6 +211,20 @@ ul.menu
 {
     color: #333;
 }
+
+.menu .title
+{
+  margin-bottom:5px;
+  line-height: 25px;
+}
+
+.menu .subtitle
+{
+  font-size: 1em;
+  line-height: 15px;
+  color: #555;
+}
+
 /** Objects Pages **/
 .object-footer
 {
