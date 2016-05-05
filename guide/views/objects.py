@@ -22,6 +22,9 @@ def object_list(request, slug):
     else:
         return HttpResponse("Not Found")
 
+def object_cats(request, slug):
+    return HttpResponse("Not Used")
+
 def object(request, collection, object):
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
