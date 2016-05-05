@@ -209,11 +209,12 @@ ul.menu
 }
 
 /* Canvas */
-.canvas
+.canvas.row;
 {
   padding:10px;
   width:100vw;
   float:left;
+  margin:0;
 }
 .canvas-col
 {
@@ -230,5 +231,6 @@ ul.menu
 .canvas a>img
 {
   max-width: 100%;
-  height:auto
+  height:auto;
+  margin-bottom:10px;
 }
