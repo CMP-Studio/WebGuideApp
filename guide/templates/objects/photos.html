@@ -11,9 +11,8 @@
 
 {% block content %}
   <div class='canvas'>
-    {% debug %}
     {% for a in art %}
-
+      <p>{{a.cover_img.first().urlFull}}</p>
     {% endfor %}
   </div>
   {% include 'elements/object_mode.html' %}
