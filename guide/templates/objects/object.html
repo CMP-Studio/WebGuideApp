@@ -4,3 +4,7 @@
 {% block page_title %}
   {{ art.title }}
 {% endblock %}
+
+{% block back_link %}
+  {% url 'object_list' c.slug %}
+{% endblock %}
