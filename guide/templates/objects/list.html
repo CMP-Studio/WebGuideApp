@@ -27,7 +27,7 @@
           <p class='subtitle'>
             {% for p in a.artist_set.all|dictsort:"last_name" %}
               {% if forloop.counter > 1 %}
-                ,&nbsp;
+                ;&nbsp;
               {% endif %}
               {{ p.first_name }}&nbsp;{{p.last_name}}
             {% endfor %}
