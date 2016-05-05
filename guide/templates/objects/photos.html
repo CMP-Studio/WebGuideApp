@@ -12,7 +12,7 @@
 {% block content %}
   <div class='canvas'>
     {% for a in art %}
-      <p>{{a.cover_img}}</p>
+      <p>{{a.cover_img.urlFull}}</p>
     {% endfor %}
   </div>
   {% include 'elements/object_mode.html' %}
