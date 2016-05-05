@@ -8,7 +8,7 @@ def object_photos(request, slug):
     coll = Exhibition.objects.filter(slug=slug)
     if coll:
 
-        media = Media.objects.filter(kind='image', position='0', artwork__exhibition=coll).order_by(artwork__title)
+        media = Media.objects.filter(kind='image', position='0', artwork__exhibition=coll).order_by('artwork__title')
         context = {'c': coll.first(), 'media': media}
 
         return render(request, "objects/photos.html" , context)
