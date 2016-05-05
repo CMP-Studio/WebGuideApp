@@ -4,7 +4,7 @@
   <div class='container'>
     <div class='row'>
       <div class='col-xs-4 col-sm-4 col-md-4'>
-        <a href='/photos'>
+        <a href='{% url 'object_photos' c.slug %}' class='mode-photo'>
           <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
           <p>Photos</p>
         </a>

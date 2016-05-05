@@ -1,6 +1,15 @@
 {% extends 'masterpages/main_back.html' %}
 {% load staticfiles %}
 
+{% block head %}
+  <style>
+    .mode-photo
+    {
+      color:white;
+    }
+  </style>
+{% endblock %}
+
 {% block page_title %}
   {{ c.title }}
 {% endblock %}
