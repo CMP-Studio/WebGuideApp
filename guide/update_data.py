@@ -50,10 +50,10 @@ def update_from_CMS():
     exhib = data['exhibitions']
     Exhibition.objects.all().delete()
     for e in exhib:
-        exhib_obj = Exhibition()
-        import_items(exhib_obj, e)
+        obj = Exhibition()
+        import_items(obj, e)
         obj.slug = slugify(e['title'])[:75]
-        exhib_obj.save()
+        obj.save()
 
     #Tours
     print "\nProcessing Tours..."
