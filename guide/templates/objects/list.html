@@ -24,7 +24,11 @@
       <a href="/test">
         <li>
           <p class='title'>{{ a.title }}</p>
-          <p class='subtitle'>{{ a.first_name }} {{a.last_name}}</p>
+          <p class='subtitle'>
+            {% for p in a.artist_set.all %}
+              {{ p.first_name }} {{p.last_name}}
+            {% endfor %}
+          </p>
         </li>
       </a>
     {% endfor %}
