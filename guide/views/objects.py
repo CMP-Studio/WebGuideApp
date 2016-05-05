@@ -21,3 +21,12 @@ def object_list(request, slug):
         return render(request, "objects/list.html" , context)
     else:
         return HttpResponse("Not Found")
+
+def object(request, collection, object):
+    coll = Exhibition.objects.filter(slug=collection, is_live=True)
+    if coll:
+        art = Artwork.objects.filter(slug=object)
+        context = {'c': coll.first(), 'art': art.first()}
+        return render(request, "objects/object.html" , context)
+    else:
+        return HttpResponse("Not Found")
