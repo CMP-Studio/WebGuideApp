@@ -5,12 +5,19 @@ from django.db.models import Prefetch
 from guide.models import Exhibition, Artwork, Media
 
 def object_photos(request, slug):
-    coll = Exhibition.objects.filter(slug=slug)
+    coll = Exhibition.objects.filter(slug=slug, is_live=True)
     if coll:
-
         media = Media.objects.filter(kind='image', position='0', artwork__exhibition=coll).order_by('artwork__title')
         context = {'c': coll.first(), 'media': media}
-
         return render(request, "objects/photos.html" , context)
+    else:
+        return HttpResponse("Not Found")
+
+def object_list(request, slug):
+    coll = Exhibition.objects.filter(slug=slug, is_live=True)
+    if coll:
+        art = Artwork.objects.filter(exhibition=coll).order_by('title')
+        context = {'c': coll.first(), 'art': art}
+        return render(request, "objects/list.html" , context)
     else:
         return HttpResponse("Not Found")

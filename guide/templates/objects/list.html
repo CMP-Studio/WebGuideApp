@@ -1,0 +1,33 @@
+{% extends 'masterpages/main_back.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <style>
+    .mode-list
+    {
+      color:white !important;
+    }
+  </style>
+{% endblock %}
+
+{% block page_title %}
+  {{ c.title }}
+{% endblock %}
+
+{% block back_link %}
+  {% url 'collection' c.slug %}
+{% endblock %}
+
+{% block content %}
+  <ul class='menu'>
+    {% for a in art %}
+      <a href="/test">
+        <li>
+          <p class='title'>{{ a.title }}</p>
+          <p class='subtitle'>{{ a.first_name }} {{a.last_name}}</p>
+        </li>
+      </a>
+    {% endfor %}
+  </ul>
+  {% include 'elements/object_mode.html' %}
+{% endblock %}
