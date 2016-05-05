@@ -11,11 +11,24 @@
 
 {% block content %}
   <div class='canvas'>
-    {% for i in media %}
-      <a href='/test' aria-label='Link to {{i.artwork.title}}'>
-        <img src='{{ i.urlSmall }}' alt='{{ i.alt }}'></img>
-      </a>
-    {% endfor %}
+    <div class='canvas-col'>
+      {% for i in media %}
+        {% if not forloop.counter|divisibleby:2 %}
+          <a href='/test' aria-label='Link to {{i.artwork.title}}'>
+            <img src='{{ i.urlSmall }}' alt='{{ i.alt }}'></img>
+          </a>
+          {% endif %}
+      {% endfor %}
+    </div>
+    <div class='canvas-col'>
+      {% for i in media %}
+        {% if forloop.counter|divisibleby:2 %}
+          <a href='/test' aria-label='Link to {{i.artwork.title}}'>
+            <img src='{{ i.urlSmall }}' alt='{{ i.alt }}'></img>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
   {% include 'elements/object_mode.html' %}
 {% endblock %}
