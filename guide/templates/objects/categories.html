@@ -1,0 +1,32 @@
+{% extends 'masterpages/main_back.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <style>
+    .mode-cat
+    {
+      color:white !important;
+    }
+  </style>
+{% endblock %}
+
+{% block page_title %}
+  {{ c.title }}
+{% endblock %}
+
+{% block back_link %}
+  {% url 'collection' c.slug %}
+{% endblock %}
+
+{% block content %}
+<ul class='menu'>
+  {% for cat in cats %}
+    <a href="{% url 'object_category' c.slug cat.slug %}">
+      <li>
+        {{ cat.title }}
+      </li>
+    </a>
+  {% endfor %}
+</ul>
+  {% include 'elements/object_mode.html' %}
+{% endblock %}

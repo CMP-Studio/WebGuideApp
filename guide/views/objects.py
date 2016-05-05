@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.db.models import Prefetch
 
-from guide.models import Exhibition, Artwork, Media
+from guide.models import Exhibition, Artwork, Media, Category
 
 def object_photos(request, slug):
     coll = Exhibition.objects.filter(slug=slug, is_live=True)
@@ -23,7 +23,13 @@ def object_list(request, slug):
         return HttpResponse("Not Found")
 
 def object_cats(request, slug):
-    return HttpResponse("Not Used")
+        coll = Exhibition.objects.filter(slug=slug, is_live=True)
+        if coll:
+            cats = Category.objects.artwork_set.filter(exhibition=slug)
+            context = {'c': coll.first(), 'cats': cats}
+            return render(request, "objects/categories.html" , context)
+        else:
+            return HttpResponse("Not Found")
 
 def object(request, collection, object):
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
