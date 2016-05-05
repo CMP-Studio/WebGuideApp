@@ -1,7 +1,7 @@
 body
 {
 background-color: #f8f8f8;
-
+overflow-x:hidden;
 }
 
 /* Top nav */
@@ -226,6 +226,24 @@ ul.menu
 }
 
 .object-footer .active
+{
+  color:white;
+}
+
+.object-footer a
+{
+  color:#f8f8f8;
+}
+.object-footer a>p
+{
+  margin-top:3px;
+  margin-bottom:0;
+}
+.object-footer .fa
+{
+  font-size:22px;
+}
+.object-footer a.active
 {
   color:white;
 }
