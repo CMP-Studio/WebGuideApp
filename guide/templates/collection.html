@@ -8,3 +8,9 @@
 {% block back_link %}
   {% url 'collections_list' %}
 {% endblock %}
+
+{% block content %}
+<div class="background-holder">
+  <img class="background" src="{{ c.bg_ipad_retina }}" alt="Background for {{c.title}}"></img>
+</div>
+{% endblock %}
