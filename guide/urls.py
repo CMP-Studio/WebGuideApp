@@ -8,5 +8,7 @@ urlpatterns = [
     url(r'^videos$', views.videos_show, name='videos_show'),
     url(r'^collections$', views.collections_list, name='collections_list'),
     url(r'^collections/(?P<slug>[a-z0-9\-]+)$', views.collection, name='collection'),
+    url(r'^collections/(?P<slug>[a-z0-9\-]+)/objects/photos$', views.object_photos, name='object_photos'),
+    url(r'^collections/(?P<slug>[a-z0-9\-]+)/tours$', views.tours, name='tours'),
     url(r'^forceupdate$', views.update_data, name='force_update')
 ]

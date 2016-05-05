@@ -13,4 +13,16 @@
 <div class="background-holder">
   <img class="background" src="{{ c.bg_ipad_retina }}" alt="Background for {{c.title}}"></img>
 </div>
+<ul class='menu'>
+  <a href="{% url 'object_photos' c.slug %}">
+    <li>
+      Discover the objects
+    </li>
+  </a>
+  <a href="{% url 'tours' c.slug %}">
+    <li>
+      Explore the tours
+    </li>
+  </a>
+</ul>
 {% endblock %}
