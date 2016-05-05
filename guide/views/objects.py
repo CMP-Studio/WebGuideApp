@@ -7,9 +7,9 @@ from guide.models import Exhibition, Artwork, Media
 def object_photos(request, slug):
     coll = Exhibition.objects.filter(slug=slug)
     if coll:
-        img = Media.objects.filter(kind='image', position='0')
-        art = Artwork.objects.filter(exhibition=coll).order_by('title').prefetch_related(Prefetch('media_set', queryset=img, to_attr='cover_img'))
-        context = {'c': coll.first(), 'art': art}
+
+        media = Media.objects.filter(kind='image', position='0', artwork__exhibition=coll).order_by(artwork__title)
+        context = {'c': coll.first(), 'media': media}
 
         return render(request, "objects/photos.html" , context)
     else:

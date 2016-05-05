@@ -11,8 +11,8 @@
 
 {% block content %}
   <div class='canvas'>
-    {% for a in art %}
-      <p>{{a.cover_img.title}}</p>
+    {% for i in media %}
+      <p>{{i.urlThumbnail}} - {{i.art.title}}</p>
     {% endfor %}
   </div>
   {% include 'elements/object_mode.html' %}
