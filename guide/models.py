@@ -38,6 +38,8 @@ class Category(models.Model):
     deleted_at      = models.DateTimeField(null=True, blank=True)
     title           = models.CharField(max_length=255)
 
+    slug            =models.SlugField(null=True, blank=True)
+
 class Exhibition(models.Model):
     uuid                    = models.UUIDField(primary_key=True)
     created_at              = models.DateTimeField(null=True, blank=True)
@@ -57,9 +59,7 @@ class Exhibition(models.Model):
     bg_ipad_normal          = models.URLField(null=True, blank=True)
     bg_ipad_retina          = models.URLField(null=True, blank=True)
 
-    def url(self):
-        url = slugify(self.title)
-        return url
+    slug                    =models.SlugField(null=True, blank=True)
 
 class Tour(models.Model):
     uuid            = models.UUIDField(primary_key=True)
@@ -71,6 +71,8 @@ class Tour(models.Model):
     body            = models.TextField(null=True, blank=True)
     exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     artwork         = models.ManyToManyField('Artwork', through='tourArtwork')
+
+    slug                    =models.SlugField(null=True, blank=True)
 
 class Artist(models.Model):
     uuid            = models.UUIDField(primary_key=True)
@@ -84,6 +86,8 @@ class Artist(models.Model):
     code            = models.CharField(max_length=40)
     exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     artwork         = models.ManyToManyField('Artwork', through='artistArtwork')
+
+    slug                    =models.SlugField(null=True, blank=True)
 
 class Link(models.Model):
     uuid                = models.UUIDField(primary_key=True)
@@ -107,6 +111,8 @@ class Artwork(models.Model):
     exhibition          = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     location            = models.ForeignKey('Location', on_delete=models.CASCADE, db_column='location_uuid')
     category            = models.ForeignKey('Category', on_delete=models.CASCADE, db_column='category_uuid')
+
+    slug                    =models.SlugField(null=True, blank=True)
 
 class Media(models.Model):
     uuid            = models.UUIDField(primary_key=True)

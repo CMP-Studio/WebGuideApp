@@ -1,6 +1,7 @@
 import requests
 import json
 import pprint
+from django.utils.text import slugify
 from guide.models import Location, Category, Exhibition, Tour, Artist, Link, Artwork, Media, artistArtwork, tourArtwork
 
 #Functions
@@ -41,6 +42,7 @@ def update_from_CMS():
     for e in entries:
         obj = Category()
         import_items(obj, e)
+        obj.slug = slugify(data['title'])
         obj.save()
 
     #Exhibitions
@@ -50,6 +52,7 @@ def update_from_CMS():
     for e in exhib:
         exhib_obj = Exhibition()
         import_items(exhib_obj, e)
+        obj.slug = slugify(data['title'])
         exhib_obj.save()
 
     #Tours
@@ -64,6 +67,7 @@ def update_from_CMS():
             continue
         obj.exhibition = ex
         import_items(obj, e)
+        obj.slug = slugify(data['title'])
         obj.save()
 
     #Artist
@@ -78,6 +82,7 @@ def update_from_CMS():
             continue
         obj.exhibition = ex
         import_items(obj, e)
+        obj.slug = slugify(data['first_name'] + ' ' + data['last_name'])
         obj.save()
 
     #Links
@@ -121,6 +126,7 @@ def update_from_CMS():
             continue
         obj.category = fk
         import_items(obj, e)
+        obj.slug = slugify(data['title'])
         obj.save()
 
     #Links
