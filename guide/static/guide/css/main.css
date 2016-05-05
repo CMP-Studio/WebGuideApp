@@ -221,3 +221,8 @@ ul.menu
   margin:10px;
   max-width: 40%;
 }
+.canvas a>img
+{
+  max-width: 100%;
+  height:auto
+}
