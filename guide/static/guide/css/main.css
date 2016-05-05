@@ -233,11 +233,18 @@ ul.menu
 .object-footer a
 {
   color:#f8f8f8;
+  margin-left:10%;
+  margin-right:10%;
+}
+.object-footer a:hover
+{
+  text-decoration: none;
 }
 .object-footer a>p
 {
   margin-top:3px;
   margin-bottom:0;
+  text-align:center;
 }
 .object-footer .fa
 {
