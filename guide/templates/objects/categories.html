@@ -21,7 +21,7 @@
 {% block content %}
 <ul class='menu'>
   {% for cat in cats %}
-    <a href="/">
+    <a href="{% url object_category c.slug cat.slug %}">
       <li>
         {{ cat.title }}
       </li>

@@ -1,0 +1,40 @@
+{% extends 'masterpages/main_back.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <style>
+    .mode-cat
+    {
+      color:white !important;
+    }
+  </style>
+{% endblock %}
+
+{% block page_title %}
+  {{ cat.title }}
+{% endblock %}
+
+{% block back_link %}
+  {% url 'object_cats' c.slug %}
+{% endblock %}
+
+{% block content %}
+  <ul class='menu'>
+    {% for a in art %}
+      <a href="{% url 'object' c.slug a.slug %}">
+        <li>
+          <p class='title'>{{ a.title }}</p>
+          <p class='subtitle'>
+            {% for p in a.artist_set.all|dictsort:"last_name" %}
+              {% if forloop.counter > 1 %}
+                ;&nbsp;
+              {% endif %}
+              {{ p.first_name }}&nbsp;{{p.last_name}}
+            {% endfor %}
+          </p>
+        </li>
+      </a>
+    {% endfor %}
+  </ul>
+  {% include 'elements/object_mode.html' %}
+{% endblock %}

@@ -8,8 +8,8 @@ def collections_list(request):
     context = {'collections': colls}
     return render(request, 'collections.html', context)
 
-def collection(request, slug):
-    coll = Exhibition.objects.filter(slug=slug)
+def collection(request, collection):
+    coll = Exhibition.objects.filter(slug=collection)
     if coll:
         context = {'c': coll.first()}
         return render(request, "collection.html" , context)
