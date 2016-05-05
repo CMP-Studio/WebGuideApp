@@ -11,8 +11,9 @@
 
 {% block content %}
   <div class='canvas'>
+    {% debug %}
     {% for a in art %}
-      <p>{{a.title}}</p>
+
     {% endfor %}
   </div>
   {% include 'elements/object_mode.html' %}
