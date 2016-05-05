@@ -34,7 +34,7 @@ def object_cats(request, collection):
 def object_category(request, collection, category):
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     cat = Category.objects.filter(slug=category)
-    if coll && cat:
+    if coll and cat:
         art = Artwork.objects.filter(exhibition=coll, category=cat)
         context = {'c': coll.first(), 'cat': cat.first(), 'art': art}
         return render(request, "objects/category.html" , context)
