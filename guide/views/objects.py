@@ -6,7 +6,9 @@ from guide.models import Exhibition
 def object_photos(request, slug):
     coll = Exhibition.objects.filter(slug=slug)
     if coll:
-        context = {'c': coll.first()}
+        art = Artwork.objects.filter(Exhibition=coll)
+        context = {'c': coll.first(), 'art': art}
+
         return render(request, "objects/photos.html" , context)
     else:
         return HttpResponse("Not Found")
