@@ -12,7 +12,9 @@
 {% block content %}
   <div class='canvas'>
     {% for i in media %}
-      <p>{{i.urlThumb}} - {{i.artwork.title}}</p>
+      <a href='/test' aria-label='Link to {{i.artwork.title}}'>
+        <img src='{{ i.urlThumb }}' alt='{{ i.alt }}'></img>
+      </a>
     {% endfor %}
   </div>
   {% include 'elements/object_mode.html' %}
