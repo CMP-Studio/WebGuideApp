@@ -42,7 +42,7 @@ def update_from_CMS():
     for e in entries:
         obj = Category()
         import_items(obj, e)
-        obj.slug = slugify(e['title'])
+        obj.slug = slugify(e['title'])[:50]
         obj.save()
 
     #Exhibitions
@@ -52,7 +52,7 @@ def update_from_CMS():
     for e in exhib:
         exhib_obj = Exhibition()
         import_items(exhib_obj, e)
-        obj.slug = slugify(e['title'])
+        obj.slug = slugify(e['title'])[:50]
         exhib_obj.save()
 
     #Tours
@@ -67,7 +67,7 @@ def update_from_CMS():
             continue
         obj.exhibition = ex
         import_items(obj, e)
-        obj.slug = slugify(e['title'])
+        obj.slug = slugify(e['title'])[:50]
         obj.save()
 
     #Artist
@@ -82,7 +82,7 @@ def update_from_CMS():
             continue
         obj.exhibition = ex
         import_items(obj, e)
-        obj.slug = slugify(e['first_name'] + ' ' + e['last_name'])
+        obj.slug = slugify(e['first_name'] + ' ' + e['last_name'])[:50]
         obj.save()
 
     #Links
@@ -126,7 +126,7 @@ def update_from_CMS():
             continue
         obj.category = fk
         import_items(obj, e)
-        obj.slug = slugify(e['title'])
+        obj.slug = slugify(e['title'])[:50]
         obj.save()
 
     #Links
