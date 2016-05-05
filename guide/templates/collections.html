@@ -8,7 +8,7 @@
 {% block content %}
   <ul class='menu'>
     {% for c in collections %}
-      <a href="{% url 'collection' c.uuid c.url %}">
+      <a href="{% url 'collection' c.slug %}">
         <li>
           <p class='title'>{{ c.title }}</p>
           <p class='subtitle'>{{ c.subtitle }}</p>
