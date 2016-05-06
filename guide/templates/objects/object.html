@@ -37,7 +37,7 @@
           {% if category %}
             {% url 'object_w_category' c.slug category.slug art_info.next.slug %}
           {% elif tour %}
-            {% url 'object_w_tour' c.slug tour.slug art_info.prev.slug %}
+            {% url 'object_w_tour' c.slug tour.slug art_info.next.slug %}
           {% else %}
             {% url 'object' c.slug art_info.next.slug %}
           {% endif %}
