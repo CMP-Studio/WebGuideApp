@@ -224,8 +224,8 @@ ul.menu
   line-height: 20px;
   color: #555;
 }
-/**Collection Page**/
-.sponsor
+/** Footer **/
+.footer
 {
   position: absolute;
   bottom:0;
@@ -233,6 +233,11 @@ ul.menu
   right:0;
   width:100vw;
   background-color: #333;
+}
+
+/**Collection Page**/
+.sponsor
+{
   text-align: center;
 }
 
@@ -247,13 +252,6 @@ ul.menu
 {
   position: fixed;
   height:50px;
-  width:100vw;
-  background-color: #333;
-  color:#f8f8f8;
-  bottom:0;
-  left: 0;
-  right:0;
-
 }
 
 .object-footer .active

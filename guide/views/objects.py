@@ -65,8 +65,45 @@ def object(request, collection, object):
         back_url = request.session['object-mode']
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
-        art = Artwork.objects.filter(slug=object)
-        context = {'c': coll.first(), 'art': art.first(), 'back': back_url}
+        obj = Artwork.objects.filter(slug=object)
+        art = Artwork.objects.filter(exhibition=coll).order_by('title')
+        info = get_art_bar_info(art, obj)
+        context = {'c': coll.first(), 'object': obj.first(), 'art_info':info, 'back': back_url}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")
+
+def object_w_category(request, collection, category, object):
+    if 'object-mode' not in request.session:
+        back_url = 'photos'
+    else:
+        back_url = request.session['object-mode']
+    coll = Exhibition.objects.filter(slug=collection, is_live=True)
+    cat =  Category.objects.filter(slug=category)
+    if coll and cat:
+        obj = Artwork.objects.filter(slug=object)
+        art = Artwork.objects.filter(exhibition=coll, category=cat).order_by('title')
+        info = get_art_bar_info(art, obj)
+        context = {'c': coll.first(), 'object': obj.first(), 'art_info':info, 'back': back_url}
+        return render(request, "objects/object.html" , context)
+    else:
+        return HttpResponse("Not Found")
+
+def get_art_bar_info(art, obj):
+    indx = -1
+    for counter, a in art:
+        if a.uuid = obj.uuid:
+            indx = counter
+            break
+
+    info = {}
+    count = art.count()
+    info['count'] = count
+    if indx > 0:
+        info['prev'] = art[indx-1]
+    if indx < count - 1
+        info['next'] = art[indx+1]
+
+    indx++
+    info['current'] = indx
+    return info
