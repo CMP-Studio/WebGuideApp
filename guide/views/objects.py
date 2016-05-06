@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.db.models import Prefetch
 
-from guide.models import Exhibition, Artwork, Media, Category
+from guide.models import Exhibition, Artwork, Media, Category, Tour
 
 def object_photos(request, collection):
     request.session['object-mode'] = 'photos';
@@ -85,6 +85,22 @@ def object_w_category(request, collection, category, object):
         art = Artwork.objects.filter(exhibition=coll, category=cat).order_by('title')
         info = get_art_bar_info(art, obj)
         context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'category': cat}
+        return render(request, "objects/object.html" , context)
+    else:
+        return HttpResponse("Not Found")
+
+def object_w_tour(request, collection, tour, object):
+    if 'object-mode' not in request.session:
+        back_url = 'photos'
+    else:
+        back_url = request.session['object-mode']
+    coll = Exhibition.objects.filter(slug=collection, is_live=True)
+    t =  Category.objects.filter(slug=tour)
+    if coll and cat:
+        obj = Artwork.objects.filter(slug=object).first()
+        art = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
+        info = get_art_bar_info(art, obj)
+        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'tour': t}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")

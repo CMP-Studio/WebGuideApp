@@ -8,7 +8,7 @@
 {% block content %}
   <ul class='menu'>
     {% for t in tours %}
-      <a href="/test">
+      <a href="{% url 'tour' c.slug t.slug %}">
         <li>
           <p class='title'>{{ t.title }}</p>
           <p class='subtitle'>{{ t.subtitle }}</p>

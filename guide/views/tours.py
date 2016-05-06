@@ -12,3 +12,7 @@ def tours(request, collection):
         return render(request, "tours/index.html" , context)
     else:
         return HttpResponse("Not Found")
+
+def tour(request, collection, tour):
+    request.session['object-mode'] = 'tours/' + tour
+    return HttpResponse(tour)
