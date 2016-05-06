@@ -314,3 +314,10 @@ ul.menu
   height:auto;
   margin-bottom:10px;
 }
+
+/*** Object Page ***/
+.art-footer
+{
+  color: #f8f8f8;
+  text-align: center;
+}
