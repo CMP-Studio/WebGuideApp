@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from guide.models import Exhibition, Tour, Artwork
+from guide.models import Exhibition, Tour, Artwork, tourArtwork
 
 def tours(request, collection):
     coll_set = Exhibition.objects.filter(slug=collection, is_live=True)
@@ -20,7 +20,8 @@ def tour(request, collection, tour):
     if coll_set and tour_set:
         coll = coll_set.first()
         tour = tour_set.first()
-        art = Artwork.objects.filter(exhibition=coll, tour=tour).order_by('tourartwork__position')
+        art = tourArtwork.objects.filter(exhibition=coll, tour=tour).order_by('position')
+        #art = Artwork.objects.filter(exhibition=coll, tour=tour).order_by('tourartwork__position')
         context = {'c': coll, 'tour': tour, 'art': art}
         return render(request, "tours/tour.html" , context)
     else:
