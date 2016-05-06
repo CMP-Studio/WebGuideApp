@@ -8,7 +8,21 @@ def object_photos(request, collection):
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
         media = Media.objects.filter(kind='image', position='0', artwork__exhibition=coll).order_by('artwork__title')
-        context = {'c': coll.first(), 'media': media}
+        #Split media into two arrays (one for each column)
+        left = []
+        right = []
+        leftH = 0
+        rightH = 0
+        for m in media:
+            if leftH <= rightH:
+                left.append(m)
+                leftH += m.height
+            else:
+                right.append(m)
+                rightH += m.height
+
+        mediaCol = {'left' : left, 'right' : right}
+        context = {'c': coll.first(), 'media': mediaCol}
         return render(request, "objects/photos.html" , context)
     else:
         return HttpResponse("Not Found")

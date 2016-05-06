@@ -23,21 +23,17 @@
   <div class="container">
     <div class='row'>
       <div class='col-xs-6 col-sm-6 col-md-6'>
-        {% for i in media %}
-          {% if not forloop.counter|divisibleby:2 %}
-            <a href='{% url 'object' c.slug i.artwork.slug %}' aria-label='Link to {{i.artwork.title}}'>
-              <img src='{{ i.urlMedium }}' alt='{{ i.alt }}'></img>
-            </a>
-            {% endif %}
+        {% for i in media.left %}
+          <a href='{% url 'object' c.slug i.artwork.slug %}' aria-label='Link to {{i.artwork.title}}'>
+            <img src='{{ i.urlMedium }}' alt='{{ i.alt }}'></img>
+          </a>
         {% endfor %}
       </div>
       <div class='col-xs-6 col-sm-6 col-md-6'>
-        {% for i in media %}
-          {% if forloop.counter|divisibleby:2 %}
-            <a href='{% url 'object' c.slug i.artwork.slug %}' aria-label='Link to {{i.artwork.title}}'>
-              <img src='{{ i.urlMedium }}' alt='{{ i.alt }}'></img>
-            </a>
-          {% endif %}
+        {% for i in media.right %}
+          <a href='{% url 'object' c.slug i.artwork.slug %}' aria-label='Link to {{i.artwork.title}}'>
+            <img src='{{ i.urlMedium }}' alt='{{ i.alt }}'></img>
+          </a>
         {% endfor %}
       </div>
     </div>
