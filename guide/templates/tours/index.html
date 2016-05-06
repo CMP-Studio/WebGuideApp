@@ -5,6 +5,10 @@
   {{ c.title }}
 {% endblock %}
 
+{% block back_link %}
+  {% url 'collection' c.slug %}
+{% endblock %}
+
 {% block content %}
   <ul class='menu'>
     {% for t in tours %}
