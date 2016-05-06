@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block page_title %}
-  {{ art.title }}
+  {{ obj.title }}
 {% endblock %}
 
 {% block back_link %}
@@ -14,7 +14,17 @@
   <div class='container'>
     <div class='row'>
       <div class='col-xs-4 col-sm-4 col-md-4'>
-
+        {% if art_info.prev %}
+          <a href="
+          {% if category %}
+            {% url 'object_w_category' c.slug category.slug art_info.prev.slug %}
+          {% else %}
+            {% url 'object' c.slug obj.slug %}
+          {% endif %}
+          " aria-label="Link to previous object">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </a>
+        {% endif %}
       </div>
       <div class='col-xs-4 col-sm-4 col-md-4'>
         <p><span class='number'>{{art_info.current}}</span><i> of </i><span class='number'>{{art_info.count}}</span></p>
