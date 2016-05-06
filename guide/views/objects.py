@@ -95,15 +95,16 @@ def object_w_tour(request, collection, tour, object):
     else:
         back_url = request.session['object-mode']
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
-    t =  Tour.objects.filter(slug=tour)
-    if coll and t:
-        obj = Artwork.objects.filter(slug=object).first()
-        art = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
-        info = get_art_bar_info(art, obj)
-        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'tour': t}
-        return render(request, "objects/object.html" , context)
-    else:
-        return HttpResponse("Not Found")
+    if coll:
+        t =  Tour.objects.filter(slug=tour, exhibition=coll)
+        if t:
+            obj = Artwork.objects.filter(slug=object).first()
+            art = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
+            info = get_art_bar_info(art, obj)
+            context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'tour': t}
+            return render(request, "objects/object.html" , context)
+    
+    return HttpResponse("Not Found")
 
 def get_art_bar_info(art, obj):
     indx = -1
