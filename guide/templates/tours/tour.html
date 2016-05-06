@@ -17,7 +17,7 @@
   </div>
   <ul class='menu'>
     {% for a in art %}
-      <a href="{% url 'object_w_tour' c.slug tour.slug a.slug %}">
+      <a href="{% url 'object_w_tour' c.slug tour.slug a.artwork.slug %}">
         <li>
           <div class='container'>
             <div class='row'>
