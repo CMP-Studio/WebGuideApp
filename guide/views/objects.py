@@ -5,6 +5,7 @@ from django.db.models import Prefetch
 from guide.models import Exhibition, Artwork, Media, Category
 
 def object_photos(request, collection):
+    request.session['object-mode'] = 'photos';
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
         media = Media.objects.filter(kind='image', position='0', artwork__exhibition=coll).order_by('artwork__title')
@@ -28,6 +29,7 @@ def object_photos(request, collection):
         return HttpResponse("Not Found")
 
 def object_list(request, collection):
+    request.session['object-mode'] = 'list';
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
         art = Artwork.objects.filter(exhibition=coll).order_by('title')
@@ -46,6 +48,7 @@ def object_cats(request, collection):
             return HttpResponse("Not Found")
 
 def object_category(request, collection, category):
+    request.session['object-mode'] = 'category/' + category;
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     cat = Category.objects.filter(slug=category)
     if coll and cat:
@@ -56,10 +59,11 @@ def object_category(request, collection, category):
         return HttpResponse("Not Found")
 
 def object(request, collection, object):
+    back_url = request.session['object-mode']
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
         art = Artwork.objects.filter(slug=object)
-        context = {'c': coll.first(), 'art': art.first()}
+        context = {'c': coll.first(), 'art': art.first(), 'back': back_url}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")

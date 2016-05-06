@@ -8,3 +8,7 @@
 {% block back_link %}
   {% url 'object_list' c.slug %}
 {% endblock %}
+
+{% block content %}
+  {{back_url}}
+{% endblock %}
