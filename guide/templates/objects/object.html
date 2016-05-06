@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block back_link %}
-  {% url 'object_list' c.slug %}
+  {% url 'collection' c.slug %}/objects/{{back}}
 {% endblock %}
 
 {% block content %}
-  {% url 'collection' c.slug %}/objects/{{back}}
+
 {% endblock %}
