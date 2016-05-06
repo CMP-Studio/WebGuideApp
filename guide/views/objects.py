@@ -104,6 +104,6 @@ def get_art_bar_info(art, obj):
     if indx < count - 1:
         info['next'] = art[indx+1]
 
-    indx++
+    indx += 1
     info['current'] = indx
     return info
