@@ -11,9 +11,11 @@
 
 {% block content %}
   <div class='descrip'>
-    <p>
-      {{tour.body}}
-    </p>
+    <div class='container'>
+      <p>
+        {{tour.body}}
+      </p>
+    </div>
   </div>
   <ul class='menu'>
     {% for a in art %}
@@ -22,11 +24,18 @@
           <div class='container'>
             <div class='row'>
               <div class='col-xs-1 col-sm-1 position'>
-                {{a.position}}
+                {{a.position + 1}}
               </div>
               <div class='col-xs-11 col-sm-11'>
                 <p class='title'>{{ a.artwork.title }}</p>
-                <p class='subtitle'>{{ a.artwork.subtitle }}</p>
+                <p class='subtitle'>
+                  {% for p in a.artwork.artist_set.all|dictsort:"last_name" %}
+                    {% if forloop.counter > 1 %}
+                      ;&nbsp;
+                    {% endif %}
+                    {{ p.first_name }}&nbsp;{{p.last_name}}
+                  {% endfor %}
+                </p>
               </div>
             </div>
           </div>
