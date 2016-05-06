@@ -25,7 +25,9 @@
     </li>
   </a>
 </ul>
-<div class='sponsor'>
-  <p>{{c.sponsor}}</p>
-</div>
+{% if not c.sponsor or c.sponsor.strip %}
+  <div class='sponsor'>
+    <p>{{c.sponsor}}</p>
+  </div>
+{% endif %}
 {% endblock %}
