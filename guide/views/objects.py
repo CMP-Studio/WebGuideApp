@@ -95,7 +95,7 @@ def object_w_tour(request, collection, tour, object):
     else:
         back_url = request.session['object-mode']
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
-    t =  Category.objects.filter(slug=tour)
+    t =  Tour.objects.filter(slug=tour)
     if coll and t:
         obj = Artwork.objects.filter(slug=object).first()
         art = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
