@@ -101,7 +101,7 @@ def get_art_bar_info(art, obj):
     info['count'] = count
     if indx > 0:
         info['prev'] = art[indx-1]
-    if indx < count - 1
+    if indx < count - 1:
         info['next'] = art[indx+1]
 
     indx++
