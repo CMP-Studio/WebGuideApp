@@ -316,8 +316,29 @@ ul.menu
 }
 
 /*** Object Page ***/
-.art-footer
+.obj-nav-footer
 {
+  height:50px;
   color: #f8f8f8;
   text-align: center;
+}
+
+.obj-nav-footer a
+{
+  color: #f8f8f8;
+  display:block;
+}
+.obj-nav-footer p
+{
+  font-size:22px;
+  line-height: 50px;
+}
+.obj-nav-footer .fa
+{
+  font-size:22px;
+  line-height: 50px;
+}
+.obj-nav-footer a:hover
+{
+  text-decoration: none;
 }
