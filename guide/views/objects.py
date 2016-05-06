@@ -98,6 +98,9 @@ def get_art_bar_info(art, obj):
             break
         c += 1
 
+    if indx == -1:
+        return None
+
     info = {}
     count = art.count()
     info['count'] = count
