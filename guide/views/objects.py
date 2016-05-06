@@ -101,9 +101,9 @@ def object_w_tour(request, collection, tour, object):
             obj = Artwork.objects.filter(slug=object).first()
             art = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
             info = get_art_bar_info(art, obj)
-            context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'tour': t}
+            context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'tour': t.first()}
             return render(request, "objects/object.html" , context)
-    
+
     return HttpResponse("Not Found")
 
 def get_art_bar_info(art, obj):
