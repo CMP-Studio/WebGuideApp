@@ -92,7 +92,7 @@ def object_w_category(request, collection, category, object):
 def get_art_bar_info(art, obj):
     indx = -1
     for counter, a in art:
-        if a.uuid = obj.uuid:
+        if a.uuid == obj.uuid:
             indx = counter
             break
 
