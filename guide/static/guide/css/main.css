@@ -343,3 +343,13 @@ ul.menu
 {
   text-decoration: none;
 }
+
+/** Tours **/
+.descrip
+{
+  padding-top:10px;
+}
+.descrip p
+{
+  font-size:1.25em;
+}
