@@ -30,7 +30,17 @@
         <p><span class='number'>{{art_info.current}}</span><i> of </i><span class='number'>{{art_info.count}}</span></p>
       </div>
       <div class='col-xs-4 col-sm-4 col-md-4'>
-
+        {% if art_info.next %}
+          <a href="
+          {% if category %}
+            {% url 'object_w_category' c.slug category.slug art_info.next.slug %}
+          {% else %}
+            {% url 'object' c.slug art_info.next.slug %}
+          {% endif %}
+          " aria-label="Link to next object">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </a>
+        {% endif %}
       </div>
     </div>
   </div>
