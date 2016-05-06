@@ -1,0 +1,19 @@
+{% extends 'masterpages/main_back.html' %}
+{% load staticfiles %}
+
+{% block page_title %}
+  {{ c.title }}
+{% endblock %}
+
+{% block content %}
+  <ul class='menu'>
+    {% for t in tours %}
+      <a href="/test">
+        <li>
+          <p class='title'>{{ t.title }}</p>
+          <p class='subtitle'>{{ t.subtitle }}</p>
+        </li>
+      </a>
+    {% endfor %}
+  </ul>
+{% endblock %}
