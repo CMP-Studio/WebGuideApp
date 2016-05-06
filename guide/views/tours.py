@@ -8,7 +8,7 @@ def tours(request, collection):
     if coll_set:
         coll = coll_set.first()
         tours = Tour.objects.filter(exhibition=coll)
-        context = {'c': coll.first(), 'tours': tours}
+        context = {'c': coll, 'tours': tours}
         return render(request, "tours/index.html" , context)
     else:
         return HttpResponse("Not Found")
