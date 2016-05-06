@@ -26,9 +26,10 @@
   </a>
 </ul>
 {% if c.sponsor and c.sponsor.strip %}
+<div class='sponsor'>
+  <p>{{c.sponsor}}</p>
+</div>
 {% else %}
-  <div class='sponsor'>
-    <p>{{c.sponsor}}</p>
-  </div>
+
 {% endif %}
 {% endblock %}
