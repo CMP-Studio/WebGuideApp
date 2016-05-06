@@ -16,10 +16,10 @@ def object_photos(request, collection):
         for m in media:
             if leftH <= rightH:
                 left.append(m)
-                leftH += m.height
+                leftH += (m.height / m.width)
             else:
                 right.append(m)
-                rightH += m.height
+                rightH += (m.height / m.width)
 
         mediaCol = {'left' : left, 'right' : right}
         context = {'c': coll.first(), 'media': mediaCol}
