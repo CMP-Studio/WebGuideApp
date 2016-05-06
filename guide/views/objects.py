@@ -59,7 +59,10 @@ def object_category(request, collection, category):
         return HttpResponse("Not Found")
 
 def object(request, collection, object):
-    back_url = request.session['object-mode']
+    if 'object-mode' not in request.session:
+        back_url = 'photos'
+    else:
+        back_url = request.session['object-mode']
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
         art = Artwork.objects.filter(slug=object)
