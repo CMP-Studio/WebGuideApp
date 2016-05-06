@@ -91,10 +91,12 @@ def object_w_category(request, collection, category, object):
 
 def get_art_bar_info(art, obj):
     indx = -1
-    for counter, a in art:
+    c = 0
+    for a in art:
         if a.uuid == obj.uuid:
-            indx = counter
+            indx = c
             break
+        c += 1
 
     info = {}
     count = art.count()
