@@ -65,10 +65,10 @@ def object(request, collection, object):
         back_url = request.session['object-mode']
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
-        obj = Artwork.objects.filter(slug=object)
+        obj = Artwork.objects.filter(slug=object).first()
         art = Artwork.objects.filter(exhibition=coll).order_by('title')
         info = get_art_bar_info(art, obj)
-        context = {'c': coll.first(), 'object': obj.first(), 'art_info':info, 'back': back_url}
+        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")
@@ -81,10 +81,10 @@ def object_w_category(request, collection, category, object):
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     cat =  Category.objects.filter(slug=category)
     if coll and cat:
-        obj = Artwork.objects.filter(slug=object)
+        obj = Artwork.objects.filter(slug=object).first()
         art = Artwork.objects.filter(exhibition=coll, category=cat).order_by('title')
         info = get_art_bar_info(art, obj)
-        context = {'c': coll.first(), 'object': obj.first(), 'art_info':info, 'back': back_url}
+        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'category': cat}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")
