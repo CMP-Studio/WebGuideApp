@@ -224,6 +224,23 @@ ul.menu
   line-height: 20px;
   color: #555;
 }
+/**Collection Page**/
+.sponsor
+{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right:0;
+  width:100vw;
+  background-color: #333;
+  text-align: center;
+}
+
+.sponsor p
+{
+  font-size: 1em;
+  color:#f8f8f8;
+}
 
 /** Objects Pages **/
 .object-footer
