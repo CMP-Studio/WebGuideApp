@@ -7,5 +7,10 @@ register = template.Library()
 @register.filter
 @stringfilter
 def markdownify(text):
-    # safe_mode governs how the function handles raw HTML
-    return markdown.markdown(text)
+    if isinstance(text, str):
+        html = markdown.markdown(text)
+        return html
+    else:
+        return None
+
+#Done
