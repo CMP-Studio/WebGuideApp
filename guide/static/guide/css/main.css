@@ -443,7 +443,13 @@ ul.menu
 /** body **/
 .object-details
 {
-  padding:5px;
+  padding-top:5px;
+  padding-left:5px;
+  padding-right:5px;
+}
+.object-details p
+{
+  margin-bottom: 5px;
 }
 
 
