@@ -440,6 +440,12 @@ ul.menu
   margin-top:10px;
 }
 
+/** body **/
+.object-details
+{
+  padding:5px;
+}
+
 
 
 /** Footer **/
