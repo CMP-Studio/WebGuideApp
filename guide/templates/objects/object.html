@@ -79,6 +79,11 @@
   <div class='object-title'>
     <h2>{{ object.title }}</h2>
   </div>
+  <div class='object-details'>
+    <p>
+      {{ object.body|markdownify|safe }}
+    </p>
+  </div>
 </div>
 <div class='obj-nav-footer footer'>
   <div class='container'>
