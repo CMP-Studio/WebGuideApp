@@ -22,7 +22,7 @@ def search(request):
             obj = Artwork.objects.filter(code=code)
             if obj:
                 obj = obj.first()
-                HttpResponseRedirect(reverse('object_search', object=obj.slug))
+                HttpResponseRedirect(reverse('object_search', args=[obj.Exhibition.slug, obj.slug]))
             else:
                 msg = "Unfortunately, we cannot find that object"
         else:
