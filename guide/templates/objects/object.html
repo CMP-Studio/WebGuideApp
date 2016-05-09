@@ -1,5 +1,6 @@
 {% extends 'masterpages/main_back.html' %}
 {% load staticfiles %}
+{% load markdown %}
 
 {% block page_title %}
   {{ object.title }}
@@ -80,9 +81,7 @@
     <h2>{{ object.title }}</h2>
   </div>
   <div class='object-details'>
-    <p>
       {{ object.body|markdownify|safe }}
-    </p>
   </div>
 </div>
 <div class='obj-nav-footer footer'>
