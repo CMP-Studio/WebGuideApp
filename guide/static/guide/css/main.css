@@ -384,6 +384,12 @@ ul.menu
   max-width: 100%;
   width: auto;
 }
+.object-photos .carousel img
+{
+  height: 50vh;
+  width:auto;
+  max-height:50vh;
+}
 
 
 
