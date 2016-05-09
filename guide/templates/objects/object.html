@@ -81,7 +81,9 @@
     <h2>{{ object.title }}</h2>
   </div>
   <div class='object-details'>
-      {{ object.body|markdownify|safe }}
+    {% with object.body as body %}
+      {{ body|markdownify|safe }}
+    {% endwith %}
   </div>
 </div>
 <div class='obj-nav-footer footer'>
