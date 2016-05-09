@@ -423,9 +423,9 @@ ul.menu
 {
   background-color: #333;
 }
-.carousel-control
+.carousel-control.right, .carousel-control.left
 {
-  background-image: none;
+  background-image: none !important;
 }
 
 
