@@ -388,14 +388,16 @@ ul.menu
 {
   display: block;
   margin: auto;
-  
+
   height: 50vh;
   width:auto;
-  max-height:50vh;
+  max-height:45vh;
 }
 
-
-
+.carousel-caption
+{
+  bottom: -50px;
+}
 
 /** Footer **/
 .obj-nav-footer
