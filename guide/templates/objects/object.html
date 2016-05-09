@@ -81,7 +81,7 @@
     <h2>{{ object.title }}</h2>
   </div>
   <div class='object-details'>
-      {{ object.body_html }}
+      {{ object.body_html|safe }}
   </div>
 </div>
 <div class='obj-nav-footer footer'>
