@@ -385,23 +385,7 @@ ul.menu
   width: auto;
 }
 
-.carousel-inner
-{
-  height:50vh;
-}
-.carousel-inner .item
-{
-  max-height:100%;
-}
-.carousel-inner .item>img
-{
-  display: block;
-  margin: auto;
 
-  height: 100%;
-  max-width: 100%;
-  width: auto;
-}
 
 
 /** Footer **/
