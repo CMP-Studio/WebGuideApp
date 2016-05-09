@@ -67,8 +67,9 @@ def object(request, collection, object):
     if coll:
         obj = Artwork.objects.filter(slug=object).first()
         art = Artwork.objects.filter(exhibition=coll).order_by('title')
+        photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
         info = get_art_bar_info(art, obj)
-        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url}
+        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'photos' : photos, 'back': back_url}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")
@@ -83,8 +84,9 @@ def object_w_category(request, collection, category, object):
     if coll and cat:
         obj = Artwork.objects.filter(slug=object).first()
         art = Artwork.objects.filter(exhibition=coll, category=cat).order_by('title')
+        photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
         info = get_art_bar_info(art, obj)
-        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'category': cat}
+        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'photos' : photos, 'category': cat}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")
@@ -100,8 +102,9 @@ def object_w_tour(request, collection, tour, object):
         if t:
             obj = Artwork.objects.filter(slug=object).first()
             art = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
+            photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
             info = get_art_bar_info(art, obj)
-            context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'tour': t.first()}
+            context = {'c': coll.first(), 'object': obj, 'art_info':info, 'photos':photos, 'back': back_url, 'tour': t.first()}
             return render(request, "objects/object.html" , context)
 
     return HttpResponse("Not Found")

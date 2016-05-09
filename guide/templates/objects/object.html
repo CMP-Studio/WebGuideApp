@@ -10,6 +10,49 @@
 {% endblock %}
 
 {% block content %}
+<div class='object-display'>
+  <div class='object-photos'>
+    {% if photos.count > 1 %}
+      <div id="carousel-object-photos" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <% for p in photos %}
+            <li data-target="#carousel-object-photos" data-slide-to="{{ forloop.counter0 }}" {% if forloop.counter0 == 0 %}class="active"{% endif %}></li>
+          {% endfor %}
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <% for p in photos %}
+            <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
+              <img src="{{ p.urlLarge }}" alt="{{ p.alt }}">
+              <div class="carousel-caption">
+                {{p.title}}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-object-photos" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-object-photos" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    {% else %}
+      {% with photos|first as img %}
+        <figure>
+          <img class='single-image' src="{{ img.urlLarge }}" alt="{{ img.alt }}"></img>
+          <figcaption>{{ img.title }}</figcaption>
+        </figure>
+      {% endwith %}
+    {% endif %}
+  </div>
+</div>
 <div class='obj-nav-footer footer'>
   <div class='container'>
     <div class='row'>

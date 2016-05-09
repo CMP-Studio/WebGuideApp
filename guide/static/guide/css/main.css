@@ -227,7 +227,7 @@ ul.menu
 /** Footer **/
 .footer
 {
-  position: absolute;
+  position: fixed;
   bottom:0;
   left: 0;
   right:0;
@@ -250,7 +250,7 @@ ul.menu
 /** Objects Pages **/
 .object-footer
 {
-  position: fixed;
+
   height:50px;
 }
 
@@ -315,34 +315,6 @@ ul.menu
   margin-bottom:10px;
 }
 
-/*** Object Page ***/
-.obj-nav-footer
-{
-  height:50px;
-  color: #f8f8f8;
-  text-align: center;
-}
-
-.obj-nav-footer a
-{
-  color: #f8f8f8;
-  display:block;
-}
-.obj-nav-footer p
-{
-  font-size:22px;
-  line-height: 50px;
-  margin:0;
-}
-.obj-nav-footer .fa
-{
-  font-size:22px;
-  line-height: 50px;
-}
-.obj-nav-footer a:hover
-{
-  text-decoration: none;
-}
 
 /** Tours **/
 .descrip
@@ -375,4 +347,57 @@ ul.menu
     margin:0;
     line-height: 35px;
     font-size: 1.25em;
+}
+
+/*** Object Page ***/
+.object-display
+{
+  width:100vw;
+}
+.object-display>div
+{
+    width:100%;
+    border-bottom: 1px solid #777
+}
+/** Images **/
+.object-photos
+{
+  height: 50vh;
+
+}
+.object-photos .single-image
+{
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+
+
+/** Footer **/
+.obj-nav-footer
+{
+  height:50px;
+  color: #f8f8f8;
+  text-align: center;
+}
+
+.obj-nav-footer a
+{
+  color: #f8f8f8;
+  display:block;
+}
+.obj-nav-footer p
+{
+  font-size:22px;
+  line-height: 50px;
+  margin:0;
+}
+.obj-nav-footer .fa
+{
+  font-size:22px;
+  line-height: 50px;
+}
+.obj-nav-footer a:hover
+{
+  text-decoration: none;
 }
