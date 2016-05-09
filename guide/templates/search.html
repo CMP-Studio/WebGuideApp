@@ -1,0 +1,14 @@
+{% extends 'masterpages/main.html' %}
+{% load staticfiles %}
+
+{% block page_title %}
+  Object Code
+{% endblock %}
+
+{% block content %}
+  <h2 class='search'>To access information about a specific object, please enter the object code here</h2>
+  {% if message %}<p class='info'>{{ message }}</p>{% endif %}
+  {% csrf_token %}
+  {{ form }}
+
+{% endblock %}
