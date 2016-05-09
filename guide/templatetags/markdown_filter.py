@@ -8,7 +8,7 @@ register = template.Library()
 @register.filter
 @stringfilter
 def markdownify(text):
-    if isinstance(text, str):
+    if isinstance(text, unicode):
         html = markdown.markdown(text)
         return html
     else:
