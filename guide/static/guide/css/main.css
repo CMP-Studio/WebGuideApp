@@ -400,10 +400,7 @@ ul.menu
   background: rgba(0,0,0,0.5);
 }
 
-.carousel .glyphicon
-{
-  color:#222;
-}
+
 .carousel-inner
 {
   height:50vh;
