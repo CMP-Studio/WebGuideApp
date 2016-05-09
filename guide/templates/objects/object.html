@@ -17,7 +17,7 @@
 <div class='object-display'>
   <div class='object-photos'>
     {% if photos.count > 1 %}
-      
+
         <div id="carousel-object-photos" class="carousel slide" data-ride="carousel" data-interval="false">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -63,6 +63,9 @@
         </figure>
       {% endwith %}
     {% endif %}
+  </div>
+  <div class='object-title'>
+    <h2>{{ object.title }}</h2>
   </div>
 </div>
 <div class='obj-nav-footer footer'>

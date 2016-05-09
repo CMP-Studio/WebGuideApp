@@ -362,7 +362,7 @@ ul.menu
 .object-display>div
 {
     width:100%;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid #333;
 }
 /** Images **/
 
@@ -389,6 +389,12 @@ ul.menu
   max-height: 45vh;
   max-width: 100%;
   width: auto;
+}
+.object-photos .carousel .item
+{
+  padding-top:5px;
+  padding-left: 5px;
+  padding-right:5px;
 }
 .object-photos .carousel img
 {
