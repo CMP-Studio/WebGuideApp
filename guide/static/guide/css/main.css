@@ -389,6 +389,10 @@ ul.menu
 {
   height:50vh;
 }
+.carousel-inner .item
+{
+  max-height:100%;
+}
 
 
 /** Footer **/
