@@ -1,6 +1,7 @@
 from django import template
 from django.template.defaultfilters import stringfilter
 import markdown
+from pprint import pprint
 
 register = template.Library()
 
@@ -11,6 +12,6 @@ def markdownify(text):
         html = markdown.markdown(text)
         return html
     else:
-        return None
+        return pprint(text)
 
 #Done
