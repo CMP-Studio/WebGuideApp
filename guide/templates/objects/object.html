@@ -17,7 +17,7 @@
 <div class='object-display'>
   <div class='object-photos'>
     {% if photos.count > 1 %}
-      <div class='container'>
+      
         <div id="carousel-object-photos" class="carousel slide" data-ride="carousel" data-interval="false">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -54,7 +54,7 @@
           </a>
 
         </div>
-      </div>
+
     {% else %}
       {% with photos|first as img %}
         <figure>
