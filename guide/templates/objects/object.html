@@ -82,7 +82,7 @@
   </div>
   <div class='object-details'>
     {% with object.body as body %}
-      {{ body }}
+      {{ body|markdownify }}
     {% endwith %}
   </div>
 </div>
