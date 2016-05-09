@@ -12,6 +12,6 @@ def markdownify(text):
         html = markdown.markdown(text)
         return html
     else:
-        return pprint(text)
+        return type(text)
 
 #Done
