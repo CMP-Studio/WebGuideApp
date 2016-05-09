@@ -1,6 +1,8 @@
 import requests
 import json
 import pprint
+import markdown
+import re
 from django.utils.text import slugify
 from guide.models import Location, Category, Exhibition, Tour, Artist, Link, Artwork, Media, artistArtwork, tourArtwork
 
@@ -10,6 +12,10 @@ def import_items(obj, data):
         if str(key).endswith("_uuid"):
             continue
         setattr(obj, key, value)
+
+def get_html_from_markdown(text):
+    text = re.sub('\r*\n','<br />', text)
+    return markdown.markdown(text)
 
 
 #Main
@@ -127,6 +133,7 @@ def update_from_CMS():
         obj.category = fk
         import_items(obj, e)
         obj.slug = slugify(e['code'] + ' ' + e['title'])[:75]
+        obj.body_html = get_html_from_markdown(e['body'])
         obj.save()
 
     #Links

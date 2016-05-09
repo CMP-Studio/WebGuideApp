@@ -112,6 +112,7 @@ class Artwork(models.Model):
     location            = models.ForeignKey('Location', on_delete=models.CASCADE, db_column='location_uuid')
     category            = models.ForeignKey('Category', on_delete=models.CASCADE, db_column='category_uuid')
 
+    body_html           = models.TextField(null=True, blank=True)
     slug                =models.SlugField(max_length=255, null=True, blank=True)
 
 class Media(models.Model):
