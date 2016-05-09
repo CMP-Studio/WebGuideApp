@@ -21,6 +21,7 @@ def search(request):
             code = form.cleaned_data['code']
             obj = Artwork.objects.filter(code=code)
             if obj:
+                obj = obj.first()
                 HttpResponseRedirect(reverse('object_search', object=obj.slug))
             else:
                 msg = "Unfortunately, we cannot find that object"
