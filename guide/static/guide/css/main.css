@@ -357,13 +357,17 @@ ul.menu
 .object-display>div
 {
     width:100%;
-    border-bottom: 1px solid #777
+    border-bottom: 1px solid #777;
 }
 /** Images **/
 .object-photos
 {
   height: 50vh;
 
+}
+.object-photos figure
+{
+  height: 100%;
 }
 .object-photos .single-image
 {
