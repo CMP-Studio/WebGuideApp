@@ -368,9 +368,18 @@ ul.menu
 .object-photos figure
 {
   height: 100%;
+  padding-top:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-bottom: 25px;
+
+  text-align: center;
 }
 .object-photos .single-image
 {
+  display: block;
+  margin: auto;
+
   max-height: 100%;
   max-width: 100%;
   width: auto;
