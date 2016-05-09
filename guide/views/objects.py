@@ -66,10 +66,10 @@ def object(request, collection, object):
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
         obj = Artwork.objects.filter(slug=object).first()
-        art = Artwork.objects.filter(exhibition=coll).order_by('title')
-        photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
-        info = get_art_bar_info(art, obj)
-        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'photos' : photos, 'back': back_url}
+        objs = Artwork.objects.filter(exhibition=coll).order_by('title')
+        media = get_object_media(obj)
+        info = get_object_bar_info(objs, obj)
+        context = {'c': coll.first(), 'object': obj, 'collect_info':info, 'media' : media, 'back': back_url}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")
@@ -83,10 +83,10 @@ def object_w_category(request, collection, category, object):
     cat =  Category.objects.filter(slug=category)
     if coll and cat:
         obj = Artwork.objects.filter(slug=object).first()
-        art = Artwork.objects.filter(exhibition=coll, category=cat).order_by('title')
-        photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
-        info = get_art_bar_info(art, obj)
-        context = {'c': coll.first(), 'object': obj, 'art_info':info, 'back': back_url, 'photos' : photos, 'category': cat}
+        objs = Artwork.objects.filter(exhibition=coll, category=cat).order_by('title')
+        media = get_object_media(obj)
+        info = get_object_bar_info(objs, obj)
+        context = {'c': coll.first(), 'object': obj, 'collect_info':info, 'back': back_url, 'media' : media, 'category': cat}
         return render(request, "objects/object.html" , context)
     else:
         return HttpResponse("Not Found")
@@ -101,18 +101,18 @@ def object_w_tour(request, collection, tour, object):
         t =  Tour.objects.filter(slug=tour, exhibition=coll)
         if t:
             obj = Artwork.objects.filter(slug=object).first()
-            art = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
-            photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
-            info = get_art_bar_info(art, obj)
-            context = {'c': coll.first(), 'object': obj, 'art_info':info, 'photos':photos, 'back': back_url, 'tour': t.first()}
+            objs = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
+            media = get_object_media(obj)
+            info = get_object_bar_info(objs, obj)
+            context = {'c': coll.first(), 'object': obj, 'collect_info':info, 'media':media, 'back': back_url, 'tour': t.first()}
             return render(request, "objects/object.html" , context)
 
     return HttpResponse("Not Found")
 
-def get_art_bar_info(art, obj):
+def get_object_bar_info(obj_set, obj):
     indx = -1
     c = 0
-    for a in art:
+    for a in obj_set:
         if a.uuid == obj.uuid:
             indx = c
             break
@@ -122,13 +122,18 @@ def get_art_bar_info(art, obj):
         return None
 
     info = {}
-    count = art.count()
+    count = obj_set.count()
     info['count'] = count
     if indx > 0:
-        info['prev'] = art[indx-1]
+        info['prev'] = obj_set[indx-1]
     if indx < count - 1:
-        info['next'] = art[indx+1]
+        info['next'] = obj_set[indx+1]
 
     indx += 1
     info['current'] = indx
     return info
+
+def get_object_media(obj):
+    photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
+    audio = Media.objects.filter(kind='audio', artwork=obj).order_by('position')
+    return {'images': photos, 'audio', audio}

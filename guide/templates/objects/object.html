@@ -16,54 +16,66 @@
 {% block content %}
 <div class='object-display'>
   <div class='object-photos'>
-    {% if photos.count > 1 %}
+    {% with photos as media.images %}
+      {% if photos.count > 1 %}
+          <div id="carousel-object-photos" class="carousel slide" data-ride="carousel" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              {% for p in photos %}
+                <li data-target="#carousel-object-photos" data-slide-to="{{ forloop.counter0 }}"
+                {% if forloop.counter0 == 0 %}
+                  class="active"
+                {% endif %}
+                ></li>
+              {% endfor %}
+            </ol>
 
-        <div id="carousel-object-photos" class="carousel slide" data-ride="carousel" data-interval="false">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            {% for p in photos %}
-              <li data-target="#carousel-object-photos" data-slide-to="{{ forloop.counter0 }}"
-              {% if forloop.counter0 == 0 %}
-                class="active"
-              {% endif %}
-              ></li>
-            {% endfor %}
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            {% for p in photos %}
-              <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
-                <img class="img-responsive" src="{{ p.urlLarge }}" alt="{{ p.alt }}">
-                <div class="carousel-caption">
-                  {{p.title}}
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              {% for p in photos %}
+                <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
+                  <img class="img-responsive" src="{{ p.urlLarge }}" alt="{{ p.alt }}">
+                  <div class="carousel-caption">
+                    {{p.title}}
+                  </div>
                 </div>
-              </div>
-            {% endfor %}
+              {% endfor %}
+            </div>
+
+            <!-- Controls -->
+
+            <a class="left carousel-control" href="#carousel-object-photos" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-object-photos" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
           </div>
 
-          <!-- Controls -->
-
-          <a class="left carousel-control" href="#carousel-object-photos" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#carousel-object-photos" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-
-        </div>
-
-    {% else %}
-      {% with photos|first as img %}
-        <figure>
-          <img class='single-image' src="{{ img.urlLarge }}" alt="{{ img.alt }}"></img>
-          <figcaption>{{ img.title }}</figcaption>
-        </figure>
-      {% endwith %}
-    {% endif %}
+      {% else %}
+        {% with photos|first as img %}
+          <figure>
+            <img class='single-image' src="{{ img.urlLarge }}" alt="{{ img.alt }}"></img>
+            <figcaption>{{ img.title }}</figcaption>
+          </figure>
+        {% endwith %}
+      {% endif %}
+    {% endwith %}
   </div>
+  {% for a in media.audio %}
+  <div class='object-audio'>
+    <figure>
+      <audio controls>
+        <source src="{{ a.urlFull }}" type="audio/mpeg">
+        We're sorry, audio is not supported on your browser
+      </audio>
+      <figcaption>{{a.title}}</figcaption>
+    </figure>
+  </div>
+  {% endfor %}
   <div class='object-title'>
     <h2>{{ object.title }}</h2>
   </div>
@@ -72,14 +84,14 @@
   <div class='container'>
     <div class='row'>
       <div class='col-xs-3 col-sm-3 col-md-3'>
-        {% if art_info.prev %}
+        {% if collect_info.prev %}
           <a href="
           {% if category %}
-            {% url 'object_w_category' c.slug category.slug art_info.prev.slug %}
+            {% url 'object_w_category' c.slug category.slug collect_info.prev.slug %}
           {% elif tour %}
-            {% url 'object_w_tour' c.slug tour.slug art_info.prev.slug %}
+            {% url 'object_w_tour' c.slug tour.slug collect_info.prev.slug %}
           {% else %}
-            {% url 'object' c.slug art_info.prev.slug %}
+            {% url 'object' c.slug collect_info.prev.slug %}
           {% endif %}
           " aria-label="Link to previous object">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -87,17 +99,17 @@
         {% endif %}
       </div>
       <div class='col-xs-6 col-sm-6 col-md-6'>
-        <p><span class='number'>{{art_info.current}}</span><i> of </i><span class='number'>{{art_info.count}}</span></p>
+        <p><span class='number'>{{collect_info.current}}</span><i> of </i><span class='number'>{{collect_info.count}}</span></p>
       </div>
       <div class='col-xs-3 col-sm-3 col-md-3'>
-        {% if art_info.next %}
+        {% if collect_info.next %}
           <a href="
           {% if category %}
-            {% url 'object_w_category' c.slug category.slug art_info.next.slug %}
+            {% url 'object_w_category' c.slug category.slug collect_info.next.slug %}
           {% elif tour %}
-            {% url 'object_w_tour' c.slug tour.slug art_info.next.slug %}
+            {% url 'object_w_tour' c.slug tour.slug collect_info.next.slug %}
           {% else %}
-            {% url 'object' c.slug art_info.next.slug %}
+            {% url 'object' c.slug collect_info.next.slug %}
           {% endif %}
           " aria-label="Link to next object">
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
