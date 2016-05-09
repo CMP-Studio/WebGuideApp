@@ -365,11 +365,7 @@ ul.menu
     border-bottom: 1px solid #777;
 }
 /** Images **/
-.object-photos
-{
-  height: 50vh;
 
-}
 .object-photos figure
 {
   height: 100%;
@@ -389,7 +385,7 @@ ul.menu
   display: block;
   margin: auto;
 
-  max-height: 100%;
+  max-height: 45vh;
   max-width: 100%;
   width: auto;
 }
