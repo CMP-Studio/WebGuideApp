@@ -386,6 +386,9 @@ ul.menu
 }
 .object-photos .carousel img
 {
+  display: block;
+  margin: auto;
+  
   height: 50vh;
   width:auto;
   max-height:50vh;

@@ -9,11 +9,21 @@
   {% url 'collection' c.slug %}/{{back}}
 {% endblock %}
 
+{% block head %}
+<script type='text/javascript'>
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: false
+    });
+  });
+</script>
+{% endblock %}
+
 {% block content %}
 <div class='object-display'>
   <div class='object-photos'>
     {% if photos.count > 1 %}
-      <div id="carousel-object-photos" class="carousel" data-ride="carousel">
+      <div id="carousel-object-photos" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           {% for p in photos %}
