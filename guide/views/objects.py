@@ -136,4 +136,4 @@ def get_object_bar_info(obj_set, obj):
 def get_object_media(obj):
     photos = Media.objects.filter(kind='image', artwork=obj).order_by('position')
     audio = Media.objects.filter(kind='audio', artwork=obj).order_by('position')
-    return {'images': photos, 'audio', audio}
+    return {'images': photos, 'audio': audio}
