@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 
 from guide.update_data import update_from_CMS
 from guide.models import Exhibition, Artwork
-from .forms import CodeForm
+from guide.forms import CodeForm
 
 def index(request):
     r_exhib = Exhibition.objects.filter(is_live=True).order_by('?').first() #get a random exhibitions
