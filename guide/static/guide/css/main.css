@@ -397,6 +397,12 @@ ul.menu
 .carousel-caption
 {
   bottom: -50px;
+  color: #333;
+}
+
+.carousel .glyphicon
+{
+  color:#222;
 }
 
 /** Footer **/
