@@ -16,12 +16,12 @@
 {% block content %}
 <div class='object-display'>
   <div class='object-photos'>
-    {% with photos as media.images %}
+
       {% if photos.count > 1 %}
           <div id="carousel-object-photos" class="carousel slide" data-ride="carousel" data-interval="false">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-              {% for p in photos %}
+              {% for p in media.images%}
                 <li data-target="#carousel-object-photos" data-slide-to="{{ forloop.counter0 }}"
                 {% if forloop.counter0 == 0 %}
                   class="active"
@@ -32,7 +32,7 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-              {% for p in photos %}
+              {% for p in media.images%}
                 <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
                   <img class="img-responsive" src="{{ p.urlLarge }}" alt="{{ p.alt }}">
                   <div class="carousel-caption">
@@ -56,14 +56,14 @@
           </div>
 
       {% else %}
-        {% with photos|first as img %}
+        {% with media.images|first as img %}
           <figure>
             <img class='single-image' src="{{ img.urlLarge }}" alt="{{ img.alt }}"></img>
             <figcaption>{{ img.title }}</figcaption>
           </figure>
         {% endwith %}
       {% endif %}
-    {% endwith %}
+
   </div>
   {% for a in media.audio %}
   <div class='object-audio'>

@@ -421,6 +421,12 @@ ul.menu
   bottom:0;
   margin-bottom:2px;
 }
+/** Audio **/
+.object-audio figure
+{
+  padding:5px;
+}
+
 /** Title **/
 .object-title
 {
