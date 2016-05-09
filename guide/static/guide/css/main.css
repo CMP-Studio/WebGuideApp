@@ -385,6 +385,16 @@ ul.menu
   width: auto;
 }
 
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 
 /** Footer **/
 .obj-nav-footer
