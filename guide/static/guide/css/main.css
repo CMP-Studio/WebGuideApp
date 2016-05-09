@@ -354,6 +354,11 @@ ul.menu
 {
   width:100vw;
 }
+.object-photos
+{
+  background-color: #777;
+}
+
 .object-display>div
 {
     width:100%;
@@ -374,6 +379,10 @@ ul.menu
   padding-bottom: 25px;
 
   text-align: center;
+}
+.object-photos figcaption
+{
+  color:#f8f8f8;
 }
 .object-photos .single-image
 {
@@ -400,7 +409,6 @@ ul.menu
   background: rgba(0,0,0,0.5);
 }
 
-
 .carousel-inner
 {
   height:50vh;
@@ -411,18 +419,7 @@ ul.menu
   margin-bottom:2px;
 }
 
-.carousel-indicators li
-{
-  border: 1px solid #333;
-}
-.carousel-indicators li.active
-{
-  background-color: #333;
-}
-.carousel-control.right, .carousel-control.left
-{
-  background-image: none !important;
-}
+
 
 
 /** Footer **/
