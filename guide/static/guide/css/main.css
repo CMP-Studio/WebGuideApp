@@ -398,12 +398,24 @@ ul.menu
 {
   bottom: -50px;
   color: #333;
+  text-shadow: none;
 }
 
 .carousel .glyphicon
 {
   color:#222;
 }
+.carousel-inner
+{
+  height:50vh;
+}
+.carousel-indicators
+{
+  bottom:0;
+  margin-bottom:2px;
+  color:#333;
+}
+
 
 /** Footer **/
 .obj-nav-footer
