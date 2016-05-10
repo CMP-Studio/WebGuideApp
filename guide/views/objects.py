@@ -65,7 +65,7 @@ def object(request, collection, object):
         back_url = request.session['object-mode']
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     if coll:
-        obj = Artwork.objects.filter(slug=object).first()
+        obj = Artwork.objects.filter(slug=object, exhibition=coll).first()
         objs = Artwork.objects.filter(exhibition=coll).order_by('title')
         media = get_object_media(obj)
         info = get_object_bar_info(objs, obj)
@@ -82,7 +82,7 @@ def object_w_category(request, collection, category, object):
     coll = Exhibition.objects.filter(slug=collection, is_live=True)
     cat =  Category.objects.filter(slug=category)
     if coll and cat:
-        obj = Artwork.objects.filter(slug=object).first()
+        obj = Artwork.objects.filter(slug=object, exhibition=coll, category=cat).first()
         objs = Artwork.objects.filter(exhibition=coll, category=cat).order_by('title')
         media = get_object_media(obj)
         info = get_object_bar_info(objs, obj)
@@ -100,12 +100,24 @@ def object_w_tour(request, collection, tour, object):
     if coll:
         t =  Tour.objects.filter(slug=tour, exhibition=coll)
         if t:
-            obj = Artwork.objects.filter(slug=object).first()
+            obj = Artwork.objects.filter(slug=object, exhibition=coll, tour=t).first()
             objs = Artwork.objects.filter(exhibition=coll, tour=t).order_by('tourartwork__position')
             media = get_object_media(obj)
             info = get_object_bar_info(objs, obj)
             context = {'c': coll.first(), 'object': obj, 'collect_info':info, 'media':media, 'back': back_url, 'tour': t.first()}
             return render(request, "objects/object.html" , context)
+
+    return HttpResponse("Not Found")
+
+def object_search(request, object):
+    back_url = 'find'
+    objs = Artwork.objects.filter(slug=object)
+    if objs:
+        obj = objs.first()
+        media = get_object_media(obj)
+        info = get_object_bar_info(objs, obj)
+        context = {'object': obj, 'collect_info':info, 'media':media, 'back': back_url}
+        return render(request, "objects/object.html" , context)
 
     return HttpResponse("Not Found")
 

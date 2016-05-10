@@ -18,6 +18,6 @@ urlpatterns = [
     url(r'^collections/(?P<collection>[a-z0-9\-]+)/o/(?P<object>[a-z0-9\-]+)/*$', views.object, name='object'),
     url(r'^collections/(?P<collection>[a-z0-9\-]+)/c/(?P<category>[a-z0-9\-]+)/(?P<object>[a-z0-9\-]+)/*$', views.object_w_category, name='object_w_category'),
     url(r'^collections/(?P<collection>[a-z0-9\-]+)/t/(?P<tour>[a-z0-9\-]+)/(?P<object>[a-z0-9\-]+)/*$', views.object_w_tour, name='object_w_tour'),
-    url(r'^collections/(?P<collection>[a-z0-9\-]+)/s/(?P<object>[a-z0-9\-]+)', views.object, name='object_search'),
+    url(r'^q/(?P<object>[a-z0-9\-]+)', views.object_search, name='object_search'),
     url(r'^forceupdate$', views.update_data, name='force_update')
 ]

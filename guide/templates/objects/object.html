@@ -7,7 +7,11 @@
 {% endblock %}
 
 {% block back_link %}
-  {% url 'collection' c.slug %}/{{back}}
+  {% if c %}
+    {% url 'collection' c.slug %}/{{back}}
+  {% else %}
+    /{{back}}
+  {% endif %}
 {% endblock %}
 
 {% block head %}
