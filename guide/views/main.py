@@ -27,10 +27,9 @@ def search(request):
                 msg = "Unfortunately, we cannot find that object"
         else:
             msg = "Please enter an object code"
-    else:
-        form = CodeForm()
 
-        return render(request, 'search.html', {'form': form, 'message' : msg})
+    form = CodeForm()
+    return render(request, 'search.html', {'form': form, 'message' : msg})
 
 
 def update_data(request):
