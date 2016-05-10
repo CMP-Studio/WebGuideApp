@@ -72,7 +72,7 @@ def visit(request):
         before = Hour.objects.filter(dow_i__lt=dow).order_by('dow_i')
         other_days = list(chain(after, before))
         mus_open = is_open()
-        context={'today': today, 'other_days': other_days, 'is_open': muss_open}
+        context={'today': today, 'other_days': other_days, 'is_open': mus_open}
         return render(request, 'hours.html', context)
 
     return HttpResponse("Hours not found")
