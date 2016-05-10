@@ -48,8 +48,8 @@ def visit(request):
     if hours:
         dow = get_dow()
         today = Hour.objects.filter(dow_i=dow).first()
-        after = Hour.object.filter(dow_i__gt=dow).order_by('dow_i')
-        before = Hour.object.filter(dow_i__lt=dow).order_by('dow_i')
+        after = Hour.objects.filter(dow_i__gt=dow).order_by('dow_i')
+        before = Hour.objects.filter(dow_i__lt=dow).order_by('dow_i')
         other_days = list(chain(after, before))
         context={'today': today, 'other_days': other_days}
         return render(request, 'hours.html', context)
