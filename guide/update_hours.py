@@ -16,7 +16,7 @@ def update_hours_CMS():
     Hour.objects.all().delete()
     h = Hour()
 
-    for key, value in data.iteritems():
+    for key, value in hours.iteritems():
         h.dow = key
         h.day_open = value['open']
         h.day_close = value['close']
