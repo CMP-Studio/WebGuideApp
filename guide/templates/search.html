@@ -7,9 +7,11 @@
 
 {% block content %}
 <div class='container'>
-  <p class='search'>To access information about a specific object, please enter the object code here:</p>
-  {% if message %}<p class='info'>{{ message }}</p>{% endif %}
-  <form action="{% url 'search' %}" method="POST">
+  <div class='search-info'>
+    {% if message %}<p class='message'>{{ message }}</p>{% endif %}
+    <p class='search'>To access information about a specific object, please enter the object code here:</p>
+  </div>
+  <form class='search-form' action="{% url 'search' %}" method="POST">
     {% csrf_token %}
     {% with form.code as field %}
       <label for="{{ field.id_for_label }}" class="sr-only">Object Code</label>

@@ -351,6 +351,27 @@ ul.menu
     font-size: 1.25em;
 }
 
+/*** Find page ***/
+.search-info
+{
+  text-align: center;
+  padding:5px;
+}
+.search-info p
+{
+  margin-bottom: 5px;
+}
+.search-info .message
+{
+  font-weight: bold;
+}
+.search-form
+{
+    display: block;
+    margin: auto;
+    padding-bottom:5px;
+}
+
 /*** Object Page ***/
 .object-display
 {
