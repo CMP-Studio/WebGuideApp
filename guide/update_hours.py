@@ -18,8 +18,8 @@ def update_hours_CMS():
 
     for key, value in data.iteritems():
         h.dow = key
-        h.day_open = data[key]['open']
-        h.day_close = data[key]['close']
+        h.day_open = value['open']
+        h.day_close = value['close']
 
     h.save()
     print "\nDone!"
