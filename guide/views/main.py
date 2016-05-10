@@ -34,9 +34,6 @@ def search(request):
 
 def hours(request):
     hours = Hour.objects.all()
-    if hours:
-        
-
 
 def update_data(request):
     update_data_CMS()
