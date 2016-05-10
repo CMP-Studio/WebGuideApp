@@ -29,11 +29,11 @@ def is_open():
         if td.day_open and td.day_close:
             if td.day_open <= now <= td.day_close:
                 #open
-                return {'class':'open', 'info':'The museum is currently open'}
+                return {'class':'open', 'info':'The museums are open now!'}
 
 
         #closed
-        return {'class':'closed', 'info':'The museum is currently closed'}
+        return {'class':'closed', 'info':'The museums are currently closed'}
 
     return None
 
