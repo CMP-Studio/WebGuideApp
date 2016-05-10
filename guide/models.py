@@ -5,7 +5,7 @@ from django.db import models
 
 #Hours table
 class Hour(models.Model):
-    dow             = models.CharField(null=True, blank=True)
+    dow             = models.CharField(max_length=30, null=True, blank=True)
     day_open        = models.TimeField(null=True, blank=True)
     day_close       = models.TimeField(null=True, blank=True)
 
