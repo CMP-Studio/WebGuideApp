@@ -273,7 +273,7 @@ ul.menu
   height: 0;
   overflow: hidden;
   padding-bottom: 50vh;
-  margin-botto:10px;
+  margin-bottom:10px;
 }
 
 .map-container iframe
@@ -285,6 +285,23 @@ ul.menu
   height: 100%;
 }
 
+.is-open
+{
+  text-align: center;
+}
+.is-open p
+{
+  line-height: 25px;
+  font-size: 1.25em;
+}
+.is-open .open
+{
+  color:#3D663D;
+}
+.is-open .closed
+{
+  color:#804D4D;
+}
 /**Collection Page**/
 .sponsor
 {
