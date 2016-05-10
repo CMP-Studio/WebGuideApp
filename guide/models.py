@@ -5,23 +5,9 @@ from django.db import models
 
 #Hours table
 class Hour(models.Model):
-    date_start      = models.DateField(null=True, blank=True)
-    date_end        = models.DateField(null=True, blank=True)
-    date_requested  = models.DateField(null=True, blank=True)
-    sunday_open     = models.TimeField(null=True, blank=True)
-    sunday_close    = models.TimeField(null=True, blank=True)
-    monday_open     = models.TimeField(null=True, blank=True)
-    monday_close    = models.TimeField(null=True, blank=True)
-    tuesday_open    = models.TimeField(null=True, blank=True)
-    tuesday_close   = models.TimeField(null=True, blank=True)
-    wednesday_open  = models.TimeField(null=True, blank=True)
-    wednesday_close = models.TimeField(null=True, blank=True)
-    thursday_open   = models.TimeField(null=True, blank=True)
-    thursday_close  = models.TimeField(null=True, blank=True)
-    friday_open     = models.TimeField(null=True, blank=True)
-    friday_close    = models.TimeField(null=True, blank=True)
-    saturday_open   = models.TimeField(null=True, blank=True)
-    saturday_close  = models.TimeField(null=True, blank=True)
+    dow             = models.CharField(null=True, blank=True)
+    day_open        = models.TimeField(null=True, blank=True)
+    day_close       = models.TimeField(null=True, blank=True)
 
 # Sync tables.
 class Location(models.Model):

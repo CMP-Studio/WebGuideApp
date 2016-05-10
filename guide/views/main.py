@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 
 from guide.update_data import update_data_CMS
 from guide.update_hours import update_hours_CMS
-from guide.models import Exhibition, Artwork
+from guide.models import Exhibition, Artwork, Hour
 from guide.forms import CodeForm
 
 def index(request):
@@ -31,6 +31,11 @@ def search(request):
 
     form = CodeForm()
     return render(request, 'search.html', {'form': form, 'message' : msg})
+
+def hours(request):
+    hours = Hour.objects.all()
+    if hours:
+        
 
 
 def update_data(request):
