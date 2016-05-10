@@ -14,15 +14,14 @@ def update_hours_CMS():
     hours = data['hours']
     #Remove previous hours
     Hour.objects.all().delete()
-    dow = 1
-    
+    dow = {"Sunday":1,"Monday":2,"Tuesday":3,"Wednesday":4,"Thursday":5,"Friday":6,"Saturday":7}
+
     for key, value in hours.iteritems():
         h = Hour()
-        h.dow_i = dow
+        h.dow_i = dow[key]
         h.dow = key
         h.day_open = value['open']
         h.day_close = value['close']
-        dow += 1
         h.save()
 
 
