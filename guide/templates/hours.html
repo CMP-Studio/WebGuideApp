@@ -9,17 +9,41 @@
 
   <ul class='menu'>
     <li class='today'>
-      <p class='dow'>Today</p>
-      <p class='hours'>
-        {{ today.day_open|time:"g:iA"|lower }} - {{ today.day_close|time:"g:iA"|lower }}
-      </p>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-sm-6 col-md-6'>
+            <p class='dow'>Today</p>
+          </div>
+          <div class='col-sm-6 col-md-6'>
+              <p class='hours'>
+                {% if today.day_open and today.day_close %}
+                  {{ today.day_open|time:"g:iA"|lower }} - {{ today.day_close|time:"g:iA"|lower }}
+                {% else %}
+                  Closed
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
     </li>
     {% for d in other_days %}
         <li>
-          <p class='dow'>{{ d.dow }}</p>
-          <p class='hours'>
-            {{ d.day_open|time:"g:iA"|lower }} - {{ d.day_close|time:"g:iA"|lower }}
-          </p>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-sm-6 col-md-6'>
+                <p class='dow'>{{ d.dow }}</p>
+              </div>
+              <div class='col-sm-6 col-md-6'>
+                  <p class='hours'>
+                    {% if d.day_open and d.day_close %}
+                      {{ d.day_open|time:"g:iA"|lower }} - {{ d.day_close|time:"g:iA"|lower }}
+                    {% else %}
+                      Closed
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+            </div>
         </li>
     {% endfor %}
   </ul>
