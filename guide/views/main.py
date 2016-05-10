@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-from guide.update_data import update_from_CMS
+from guide.update_data import update_data_CMS
+from guide.update_hours import update_hours_CMS
 from guide.models import Exhibition, Artwork
 from guide.forms import CodeForm
 
@@ -33,5 +34,6 @@ def search(request):
 
 
 def update_data(request):
-    update_from_CMS()
+    update_data_CMS()
+    update_hours_CMS()
     return HttpResponse("Data has been updated!")
