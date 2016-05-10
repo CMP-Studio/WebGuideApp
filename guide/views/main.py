@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
+import pytz
 import datetime
 from itertools import chain
 
@@ -17,6 +18,23 @@ def get_dow():
     if wkday > 7:
         wkday -= 7
     return wkday
+
+def is_open():
+    dow = get_dow()
+    today = Hour.objects.filter(dow_i=dow)
+    if today:
+        td = today.first()
+        est = pytz.timezone('US/Eastern')
+        now = datetime.datetime.now(est)
+        if td.day_open <= now <= td.day_close:
+            #open
+            return {'class':'open', 'info':'The museum is currently open'}
+        else:
+            #closed
+            return {'class':'closed', 'info':'The museum is currently closed'}
+
+    return None
+
 
 def index(request):
     r_exhib = Exhibition.objects.filter(is_live=True).order_by('?').first() #get a random exhibitions
@@ -51,7 +69,8 @@ def visit(request):
         after = Hour.objects.filter(dow_i__gt=dow).order_by('dow_i')
         before = Hour.objects.filter(dow_i__lt=dow).order_by('dow_i')
         other_days = list(chain(after, before))
-        context={'today': today, 'other_days': other_days}
+        is_open = is_open()
+        context={'today': today, 'other_days': other_days, 'is_open': is_open}
         return render(request, 'hours.html', context)
 
     return HttpResponse("Hours not found")

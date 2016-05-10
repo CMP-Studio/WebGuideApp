@@ -252,6 +252,10 @@ ul.menu
   background-color: #333;
 }
 /** Hours & Location **/
+.hour-location-holder
+{
+  padding-top: 10px;
+}
 .hour-location-holder>div
 {
   border-bottom: 1px solid #333;
@@ -260,13 +264,16 @@ ul.menu
 .hour-location-holder>div h2
 {
   margin-top:10px;
+  padding-left:10px;
+  padding-right:10px;
 }
 .map-container
 {
   position: relative;
   height: 0;
   overflow: hidden;
-  padding-bottom: 30vh;
+  padding-bottom: 50vh;
+  margin-botto:10px;
 }
 
 .map-container iframe
