@@ -33,3 +33,6 @@ def update_hours_CMS():
 
     h.save()
     print "\nDone!"
+
+if __name__ == "__main__":
+    update_hours_CMS()
