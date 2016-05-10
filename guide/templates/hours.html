@@ -6,46 +6,52 @@
 {% endblock %}
 
 {% block content %}
-
-  <ul class='list'>
-    <li class='today'>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-xs-4 col-sm-6 col-md-6'>
-            <p class='dow'>Today</p>
-          </div>
-          <div class='col-xs-8 col-sm-6 col-md-6'>
-              <p class='hours'>
-                {% if today.day_open and today.day_close %}
-                  {{ today.day_open|time:"g:iA"|lower }} - {{ today.day_close|time:"g:iA"|lower }}
-                {% else %}
-                  Closed
-                {% endif %}
-              </p>
+<div class='hour-location-holder'>
+  <div class='museum-location'>
+    <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Location</h2>
+  </div>
+  <div class='museum-hours'>
+    <h2><i class="fa fa-clock-o" aria-hidden="true"></i> Hours</h2>
+    <ul class='list'>
+      <li class='today'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-xs-4 col-sm-6 col-md-6'>
+              <p class='dow'>Today</p>
+            </div>
+            <div class='col-xs-8 col-sm-6 col-md-6'>
+                <p class='hours'>
+                  {% if today.day_open and today.day_close %}
+                    {{ today.day_open|time:"g:iA"|lower }} - {{ today.day_close|time:"g:iA"|lower }}
+                  {% else %}
+                    Closed
+                  {% endif %}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-    </li>
-    {% for d in other_days %}
-        <li>
-          <div class='container'>
-            <div class='row'>
-              <div class='col-xs-4 col-sm-6 col-md-6'>
-                <p class='dow'>{{ d.dow }}</p>
-              </div>
-              <div class='col-xs-8 col-sm-6 col-md-6'>
-                  <p class='hours'>
-                    {% if d.day_open and d.day_close %}
-                      {{ d.day_open|time:"g:iA"|lower }} - {{ d.day_close|time:"g:iA"|lower }}
-                    {% else %}
-                      Closed
-                    {% endif %}
-                  </p>
+      </li>
+      {% for d in other_days %}
+          <li>
+            <div class='container'>
+              <div class='row'>
+                <div class='col-xs-4 col-sm-6 col-md-6'>
+                  <p class='dow'>{{ d.dow }}</p>
+                </div>
+                <div class='col-xs-8 col-sm-6 col-md-6'>
+                    <p class='hours'>
+                      {% if d.day_open and d.day_close %}
+                        {{ d.day_open|time:"g:iA"|lower }} - {{ d.day_close|time:"g:iA"|lower }}
+                      {% else %}
+                        Closed
+                      {% endif %}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-        </li>
-    {% endfor %}
-  </ul>
-
+          </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 {% endblock %}

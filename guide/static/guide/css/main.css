@@ -232,7 +232,7 @@ ul.menu
   background-color: #f8f8f8;
   text-align: left;
   font-size: 1.1em;
-  line-height: 35px;
+  line-height: 30px;
   color: #333;
   padding-left: 10px;
 }
@@ -250,6 +250,11 @@ ul.menu
   right:0;
   width:100vw;
   background-color: #333;
+}
+/** Hours & Location **/
+.hour-location-holder>div
+{
+  border-bottom: 1px solid #333;
 }
 
 /**Collection Page**/
