@@ -257,6 +257,11 @@ ul.menu
   border-bottom: 1px solid #333;
 }
 
+.hour-location-holder>div h2
+{
+  margin-top:10px;
+}
+
 /**Collection Page**/
 .sponsor
 {
