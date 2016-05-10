@@ -6,22 +6,22 @@
 {% endblock %}
 
 {% block content %}
-<div class='container'>
+
   <ul class='menu'>
     <li class='today'>
       <p class='dow'>Today</p>
       <p class='hours'>
-        {{ today.open|time:"g:iA"|lower }} - {{ today.close|time:"g:iA"|lower }}
+        {{ today.day_open|time:"g:iA"|lower }} - {{ today.day_close|time:"g:iA"|lower }}
       </p>
     </li>
     {% for d in other_days %}
         <li>
           <p class='dow'>{{ d.dow }}</p>
           <p class='hours'>
-            {{ d.open|time:"g:iA"|lower }} - {{ d.close|time:"g:iA"|lower }}
+            {{ d.day_open|time:"g:iA"|lower }} - {{ d.day_close|time:"g:iA"|lower }}
           </p>
         </li>
     {% endfor %}
   </ul>
-</div>
+
 {% endblock %}
