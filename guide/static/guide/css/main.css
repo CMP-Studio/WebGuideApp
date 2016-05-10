@@ -224,6 +224,10 @@ ul.menu
   line-height: 20px;
   color: #555;
 }
+.menu p
+{
+  margin-bottom: 0;
+}
 /** Footer **/
 .footer
 {
