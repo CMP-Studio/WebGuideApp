@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^news/*$', views.news_show, name='news_show'),
     url(r'^videos/*$', views.videos_show, name='videos_show'),
     url(r'^find/*$', views.search, name='search'),
+    url(r'^visit/*$', views.visit, name='visit'),
     url(r'^collections/*$', views.collections_list, name='collections_list'),
     url(r'^collections/(?P<collection>[a-z0-9\-]+)/*$', views.collection, name='collection'),
     url(r'^collections/(?P<collection>[a-z0-9\-]+)/photos/*$', views.object_photos, name='object_photos'),
