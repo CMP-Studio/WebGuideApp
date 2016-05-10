@@ -365,7 +365,7 @@ ul.menu
 {
   font-weight: bold;
 }
-.search-form
+.search-form input
 {
     display: block;
     margin: auto;
