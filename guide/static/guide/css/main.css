@@ -551,8 +551,8 @@ ul.menu
 {
   text-align: center;
 }
-.object-share .fa {
-  font-size: 1.5em;
+.object-share .row .fa {
+  font-size: 3.5em;
 }
 
 .object-share a
