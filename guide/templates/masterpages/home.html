@@ -2,23 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include "elements/head.html" %}
+
+    <!--  App CSS -->
+    <link rel="stylesheet" href="{% static "guide/css/main.css" %}">
 
     <title>
       {% block tab_title %}
       Oakland Guide
       {% endblock %}
     </title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-    <!--  App CSS -->
-    <link rel="stylesheet" href="{% static "guide/css/main.css" %}">
 
     {% block head %}
 
@@ -53,9 +46,6 @@
         {% endblock %}
       </div>
 
-      <!-- jQuery -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <!-- Bootstrap -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      {% include "elements/scripts.html" %}
   </body>
 </html>
