@@ -86,9 +86,10 @@
   </div>
   <div class='object-details'>
       {{ object.body_html|safe }}
+      <p class='object-location'>{{ object.title }} is located in {{ object.location.name }}</p>
   </div>
-  <div class='object-location'>
-    <p>{{ object.title }} is located in {{ object.location.name }}</p>
+  <div class='object-share'>
+
   </div>
 </div>
 <div class="footer-spacer"></div>

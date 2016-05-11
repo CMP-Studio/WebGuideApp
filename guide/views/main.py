@@ -27,7 +27,7 @@ def is_open():
         est = pytz.timezone('US/Eastern')
         now = datetime.datetime.now(est)
         if td.day_open and td.day_close:
-            if td.day_open <= now <= td.day_close:
+            if td.day_open <= now.time() <= td.day_close:
                 #open
                 return {'class':'open', 'info':'The museums are open now!'}
 
