@@ -72,21 +72,27 @@
   </div>
   {% for a in media.audio %}
   <div class='object-audio'>
-    <figure>
-      <audio controls>
-        <source src="{{ a.urlFull }}" type="audio/mpeg">
-        We're sorry, audio is not supported on your browser
-      </audio>
-      <figcaption>{{a.title}}</figcaption>
-    </figure>
+    <div class='container'>
+      <figure>
+        <audio controls>
+          <source src="{{ a.urlFull }}" type="audio/mpeg">
+          We're sorry, audio is not supported on your browser
+        </audio>
+        <figcaption>{{a.title}}</figcaption>
+      </figure>
+    </div>
   </div>
   {% endfor %}
   <div class='object-title'>
-    <h2>{{ object.title }}</h2>
+    <div class='container'>
+      <h2>{{ object.title }}</h2>
+    </div>
   </div>
   <div class='object-details'>
+    <div class='container'>
       {{ object.body_html|safe }}
       <p class='object-location'>{{ object.title }} is located in {{ object.location.name }}</p>
+    </div>
   </div>
   {% if object.share_url %}
   <div class='object-share'>

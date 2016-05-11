@@ -287,7 +287,7 @@ ul.menu
 
 .is-open
 {
-  
+
 }
 .is-open p
 {
@@ -547,7 +547,24 @@ ul.menu
 }
 
 /** Share **/
+.object-share .row
+{
+  text-align: center;
+}
+.object-share .fa {
+  font-size: 1.5em;
+}
 
+.object-share a
+{
+    color: #333;
+    text-decoration: none;
+}
+
+.object-share a:hover
+{
+    color: #333;
+}
 
 /** Footer **/
 .obj-nav-footer
