@@ -88,9 +88,33 @@
       {{ object.body_html|safe }}
       <p class='object-location'>{{ object.title }} is located in {{ object.location.name }}</p>
   </div>
+  {% if object.share_url %}
   <div class='object-share'>
-
+    <div class='container'>
+      <h3><i class="fa fa-share" aria-hidden="true"></i> Share</h3>
+      <div class='row'>
+        <div class='col-xs-4 col-sm-4 col-md-4'>
+          <a href='https://www.facebook.com/sharer/sharer.php?u={{object.share_url|urlencode:""}}' target='_blank'>
+            <p><i class="fa fa-facebook-square" aria-hidden="true"></i></p>
+            <p>Facebook</p>
+          </a>
+        </div>
+        <div class='col-xs-4 col-sm-4 col-md-4'>
+          <a href='https://twitter.com/home?status={{ object.title|urlencode:"" }}{{ " @cmoa @carnegiemnh "|urlencode:"" }}{{object.share_url|urlencode:""}}' target='_blank'>
+            <p><i class="fa fa-twitter-square" aria-hidden="true"></i></p>
+            <p>Twitter</p>
+          </a>
+        </div>
+        <div class='col-xs-4 col-sm-4 col-md-4'>
+          <a href='{{object.share_url}}' target='_blank'>
+            <p><i class="fa fa-external-link" aria-hidden="true"></i></p>
+            <p>More Info</p>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+  {% endif %}
 </div>
 <div class="footer-spacer"></div>
 <div class='obj-nav-footer footer'>
