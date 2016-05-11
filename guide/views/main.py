@@ -77,6 +77,9 @@ def visit(request):
 
     return HttpResponse("Hours not found")
 
+def connect(request):
+    return render(request, 'connect.html')
+
 
 def update_data(request):
     update_data_CMS()
