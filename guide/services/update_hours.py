@@ -2,7 +2,7 @@ import requests
 import json
 import pprint
 import re
-from guide.models import Hour
+from guide.models import Hour, Update
 from django.conf import settings
 
 
@@ -24,6 +24,10 @@ def update_hours_CMS():
         h.day_close = value['close']
         h.save()
 
+    u = Update()
+    u.descrip = 'update_hours'
+    u.success = True
+    u.save()
 
     print "\nDone!"
 

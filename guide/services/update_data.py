@@ -5,7 +5,7 @@ import markdown
 import re
 from django.utils.text import slugify
 from django.conf import settings
-from guide.models import Location, Category, Exhibition, Tour, Artist, Link, Artwork, Media, artistArtwork, tourArtwork
+from guide.models import Location, Category, Exhibition, Tour, Artist, Link, Artwork, Media, artistArtwork, tourArtwork, Update
 
 #Functions
 def import_items(obj, data):
@@ -202,6 +202,14 @@ def update_data_CMS():
         obj.artwork = fk
         import_items(obj, e)
         obj.save()
+
+    #Write to update table
+    print "\nLogging update"
+
+    u = Update()
+    u.descrip = 'update_data'
+    u.success = True
+    u.save()
 
     print "\nDone!"
 

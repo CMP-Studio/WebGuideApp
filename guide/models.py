@@ -139,3 +139,10 @@ class tourArtwork(models.Model):
     exhibition      = models.ForeignKey('Exhibition', on_delete=models.CASCADE, db_column='exhibition_uuid')
     tour            = models.ForeignKey('Tour', on_delete=models.CASCADE, db_column='tour_uuid')
     artwork         = models.ForeignKey('Artwork', on_delete=models.CASCADE, db_column='artwork_uuid')
+
+#Updates - only used for debugging updates
+
+class Update(models.Model):
+    updated_at     = models.DateTimeField(auto_now_add=True)
+    descrip        = models.CharField(max_length=255, null=True, blank=True)
+    success        = models.BooleanField(default=False)
