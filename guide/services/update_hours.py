@@ -24,6 +24,9 @@ def update_hours_CMS():
         h.day_close = value['close']
         h.save()
 
+    #Write to update table
+    print "\nLogging update"
+
     u = Update()
     u.descrip = 'update_hours'
     u.success = True
