@@ -6,7 +6,7 @@ import requests, re
 
 def news_show(request):
     r = requests.get(settings.NEWS_URL)
-    s = re.search('(<style type="text/css">[\s\S]+</ul>)', r.text)
+    s = re.search('(<ul>[\s\S]+</ul>)', r.text)
     if s:
         context = {'news_text': s.group(0)}
     else:
@@ -15,7 +15,7 @@ def news_show(request):
 
 def videos_show(request):
     r = requests.get(settings.VIDEOS_URL)
-    s = re.search('(<style type="text/css">[\s\S]+</ul>)', r.text)
+    s = re.search('(<ul>[\s\S]+</ul>)', r.text)
     if s:
         context = {'videos_text': s.group(0)}
     else:
