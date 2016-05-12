@@ -14,4 +14,4 @@ def collection(request, collection):
         context = {'c': coll.first()}
         return render(request, "collection.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")

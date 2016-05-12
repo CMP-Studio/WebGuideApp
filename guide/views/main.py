@@ -75,7 +75,7 @@ def visit(request):
         context={'today': today, 'other_days': other_days, 'is_open': mus_open}
         return render(request, 'hours.html', context)
 
-    return HttpResponse("Hours not found")
+    raise Http404("Hours")
 
 def connect(request):
     return render(request, 'connect.html')

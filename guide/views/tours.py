@@ -11,7 +11,7 @@ def tours(request, collection):
         context = {'c': coll, 'tours': tours}
         return render(request, "tours/index.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")
 
 def tour(request, collection, tour):
     request.session['object-mode'] = 'tours/' + tour
@@ -25,4 +25,4 @@ def tour(request, collection, tour):
         context = {'c': coll, 'tour': tour, 'art': art}
         return render(request, "tours/tour.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")
