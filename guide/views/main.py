@@ -7,8 +7,8 @@ import pytz
 import datetime
 from itertools import chain
 
-from guide.update_data import update_data_CMS
-from guide.update_hours import update_hours_CMS
+from guide.services.update_data import update_data_CMS
+from guide.services.update_hours import update_hours_CMS
 from guide.models import Exhibition, Artwork, Hour
 from guide.forms import CodeForm
 
