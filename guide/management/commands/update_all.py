@@ -6,6 +6,6 @@ class Command(BaseCommand):
 
         def handle(self, *args, **options):
                 update_data_CMS()
-                self.stdout.write(self.style.SUCCESS('Successfully updated object data\n'))
+                self.stdout.write(self.style.SUCCESS('\nSuccessfully updated object data'))
                 update_hours_CMS()
-                self.stdout.write(self.style.SUCCESS('Successfully updated hours data\n'))
+                self.stdout.write(self.style.SUCCESS('\nSuccessfully updated hours data'))
