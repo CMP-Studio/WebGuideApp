@@ -57,6 +57,12 @@ nav.topbar
   text-align:center;
   width:70vw;
 }
+.page-logo
+{
+  padding-left:10px;
+  text-align: left;
+  width:70vw;
+}
 
 .navbar-right
 {
@@ -82,7 +88,7 @@ nav.topbar
 
 .page-title.home-page
 {
-  
+
 }
 
 .page-title h1
