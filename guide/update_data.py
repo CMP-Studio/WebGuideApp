@@ -4,6 +4,7 @@ import pprint
 import markdown
 import re
 from django.utils.text import slugify
+from django.conf import settings
 from guide.models import Location, Category, Exhibition, Tour, Artist, Link, Artwork, Media, artistArtwork, tourArtwork
 
 #Functions
@@ -20,10 +21,9 @@ def get_html_from_markdown(text):
 
 #Main
 def update_data_CMS():
-    sync_url = "http://guidecms.carnegiemuseums.org/api/v2/sync"
     # First we need to retrieve the data
     print "\nRetrieving data from CMS..."
-    r = requests.get(sync_url)
+    r = requests.get(settings.SYNC_URL)
     data = r.json()
     #check if data status is True
     if data['status']:

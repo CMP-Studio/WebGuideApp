@@ -118,3 +118,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = '/var/www/guideapp/guide/static/'
+
+#API settings
+SYNC_URL = 'http://guidecms.carnegiemuseums.org/api/v2/sync'
+
+HOURS_URL = 'http://guidecms.carnegiemuseums.org/api/v2/hours'
+
+NEWS_URL = 'http://guide-cms-prod.s3.amazonaws.com/feeds/news.html'
+
+VIDEOS_URL = 'http://guide-cms-prod.s3.amazonaws.com/feeds/videos.html'

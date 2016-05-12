@@ -6,9 +6,8 @@ from guide.models import Hour
 
 
 def update_hours_CMS():
-    url = "http://guidecms.carnegiemuseums.org/api/v2/hours"
     print "\nRetrieving data from CMS..."
-    r = requests.get(url)
+    r = requests.get(settings.HOURS_URL)
     data = r.json()
 
     hours = data['hours']
