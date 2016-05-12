@@ -607,6 +607,11 @@ ul.menu
 
 /*********************** News and Videos **************************/
 
+  .news-videos  ul
+  {
+    list-style: none;
+    padding-left: 0px;
+  }
 
   .news-videos  ul li .video {
       background-color: #e2e2e2;
@@ -637,18 +642,18 @@ ul.menu
       font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
       Helvetica, Arial, "Lucida Grande", sans-serif;
       font-size: 16px;
-      color: #838487;
+      color: #333;
       padding: 15px 15px 10px 15px;
     }
 
     .news-videos .title a
     {
-      color: #838487;
+      color: #333;
     }
 
     .news-videos .title a:active
     {
-      color: #838487;
+      color: #333;
     }
 
     .news-videos .pubdate {
