@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import Http404
 from django.db.models import Prefetch
 
 from guide.models import Exhibition, Artwork, Media, Category, Tour
@@ -26,7 +27,7 @@ def object_photos(request, collection):
         context = {'c': coll.first(), 'media': mediaCol}
         return render(request, "objects/photos.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")
 
 def object_list(request, collection):
     request.session['object-mode'] = 'list';
@@ -36,7 +37,7 @@ def object_list(request, collection):
         context = {'c': coll.first(), 'art': art}
         return render(request, "objects/list.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")
 
 def object_cats(request, collection):
         coll = Exhibition.objects.filter(slug=collection, is_live=True)
@@ -45,7 +46,7 @@ def object_cats(request, collection):
             context = {'c': coll.first(), 'cats': cats}
             return render(request, "objects/categories.html" , context)
         else:
-            return HttpResponse("Not Found")
+            raise Http404("Not Found")
 
 def object_category(request, collection, category):
     request.session['object-mode'] = 'category/' + category;
@@ -56,7 +57,7 @@ def object_category(request, collection, category):
         context = {'c': coll.first(), 'cat': cat.first(), 'art': art}
         return render(request, "objects/category.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")
 
 def object(request, collection, object):
     if 'object-mode' not in request.session:
@@ -72,7 +73,7 @@ def object(request, collection, object):
         context = {'c': coll.first(), 'object': obj, 'collect_info':info, 'media' : media, 'back': back_url}
         return render(request, "objects/object.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")
 
 def object_w_category(request, collection, category, object):
     if 'object-mode' not in request.session:
@@ -89,7 +90,7 @@ def object_w_category(request, collection, category, object):
         context = {'c': coll.first(), 'object': obj, 'collect_info':info, 'back': back_url, 'media' : media, 'category': cat}
         return render(request, "objects/object.html" , context)
     else:
-        return HttpResponse("Not Found")
+        raise Http404("Not Found")
 
 def object_w_tour(request, collection, tour, object):
     if 'object-mode' not in request.session:
@@ -107,7 +108,7 @@ def object_w_tour(request, collection, tour, object):
             context = {'c': coll.first(), 'object': obj, 'collect_info':info, 'media':media, 'back': back_url, 'tour': t.first()}
             return render(request, "objects/object.html" , context)
 
-    return HttpResponse("Not Found")
+    raise Http404("Not Found")
 
 def object_search(request, object):
     back_url = 'find'
@@ -119,7 +120,7 @@ def object_search(request, object):
         context = {'object': obj, 'collect_info':info, 'media':media, 'back': back_url}
         return render(request, "objects/object.html" , context)
 
-    return HttpResponse("Not Found")
+    raise Http404("Not Found")
 
 def get_object_bar_info(obj_set, obj):
     indx = -1
