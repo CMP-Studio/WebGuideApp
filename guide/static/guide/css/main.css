@@ -660,7 +660,7 @@ ul.menu
       font-family: "HelveticaNeue", "Helvetica Neue",
   Helvetica, Arial, "Lucida Grande", sans-serif;
       text-transform: uppercase;
-      color: #8594a4;
+      color: #444;
       font-size: 12px;
       padding: 10px 15px 15px 15px;
       letter-spacing: 0.3px;
@@ -670,7 +670,7 @@ ul.menu
       font-family: "HelveticaNeue", "Helvetica Neue",
   Helvetica, Arial, "Lucida Grande", sans-serif;
       font-size: 13px;
-      color: #556270;
+      color: #444;
       padding: 10px 15px 15px 15px;
       line-height: 1.4em;
     }
