@@ -39,6 +39,10 @@ nav.topbar
 }
 .navbar-left
 {
+
+}
+.navbar-left-margins
+{
   margin-left:5vw !important;
   width:80vw;
 }
@@ -78,7 +82,7 @@ nav.topbar
 
 .page-title.home-page
 {
-  margin-left:10vw;
+  
 }
 
 .page-title h1
