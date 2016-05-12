@@ -1,5 +1,5 @@
 #Settings
-settings.py
+secrets.py
 
 #Compiled
 *.pyc
