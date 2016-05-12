@@ -3,6 +3,7 @@ import json
 import pprint
 import re
 from guide.models import Hour
+from django.conf import settings
 
 
 def update_hours_CMS():
