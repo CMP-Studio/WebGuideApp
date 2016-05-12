@@ -3,3 +3,9 @@ secrets.py
 
 #Compiled
 *.pyc
+
+#Logs
+logs/*
+
+#Migrations
+*/migrations/*
