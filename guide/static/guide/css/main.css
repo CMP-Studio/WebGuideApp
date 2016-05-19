@@ -57,6 +57,10 @@ nav.topbar
   text-align:center;
   width:70vw;
 }
+.page-title.short
+{
+  width:60vw;
+}
 .page-logo
 {
   padding-left:10px;
