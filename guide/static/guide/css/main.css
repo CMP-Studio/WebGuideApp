@@ -46,6 +46,10 @@ nav.topbar
   margin-left:5vw !important;
   width:80vw;
 }
+.navbar-left-margins.short
+{
+  width:70vw;
+}
 .nav-btn
 {
   width:10vw;
@@ -57,7 +61,7 @@ nav.topbar
   text-align:center;
   width:70vw;
 }
-.page-title.short
+.short .page-title
 {
   width:60vw;
 }
