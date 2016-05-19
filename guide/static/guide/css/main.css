@@ -102,7 +102,7 @@ nav.topbar
 .page-title h1
 {
   margin:0;
-  width:70vw;
+  width:100%;
   font-size: 3.75vw;
   line-height:63px;
   max-height: 63px;
