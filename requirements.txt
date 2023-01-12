@@ -31,7 +31,7 @@ pyserial==2.6
 python-apt==0.9.3.5ubuntu2
 python-debian==0.1.21-nmu2ubuntu2
 pytz==2016.4
-requests==2.2.1
+requests==2.20.0
 roman==2.0.0
 six==1.5.2
 ssh-import-id==3.21
